@@ -1,0 +1,298 @@
+//imports
+@import url('https://fonts.googleapis.com/css2?family=Fleur+De+Leah&display=swap');
+$fondo-principal:   #fffff6;
+$color-crema: #ffffbf;
+$fondo-header: #fff0f0;
+$color-text: #d12c5e;
+$fondo-card: #fff0f0;
+$color-card: #d12c5e;
+$color-resaltado: #e2376a;
+$color-carmin: #a2231d;
+$sombra-color-resaltado: 1px 1px 0 rgba(209, 44, 94, 0.2);
+
+
+// DEFINO LAS VARIABLES AQUI PROVISORIAMENTE
+
+
+*{
+    margin: 0;
+    padding: 0;
+}
+ body{
+    background-color: $fondo-principal;
+ }
+#marca{
+    display:none;
+}
+#slogan{
+    display:none;
+}
+
+ /*_______________________________________HEADER________________________________________*/
+header{
+        width: 100%;
+        height: 5rem;
+        background-color: $fondo-header;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+    & a{
+
+        & img{
+            height: 100%;
+        }
+    }
+    /*_____________________________BOTONERA HEADER_________________________*/
+    & ul{
+        display: flex;
+        & li{
+            display: inline-block;
+            height: 100%;
+            list-style-type: none;
+            letter-spacing: 0.15rem;
+            margin-right: 1rem;
+            padding: 3px 6px;
+            border: 1px solid rgba(209,44,94,0.7);
+            border-radius: 20px;
+
+            & input{
+                    border: none;
+                    background-color: $fondo-header;
+                    color: $color-text;
+            }
+            &:hover{
+                background-color: $color-resaltado;
+            }
+
+            & a{
+                text-decoration: none;
+                color: $color-text;
+                &:hover{
+                    color: $color-crema;
+                }
+                & img{
+                    height: 80%;
+                    border-radius: 50px;
+                }
+            }
+        }
+    }
+}
+
+/*_______________________________ index main (NOSOTROS)___________________________________*/
+.nosotros{
+            & #tituloCentral{ //contenedor titulo central
+                            width: 100%;
+                            height: 600px;
+                            margin-left: auto;
+                            margin-right: auto;
+                            display: flex;
+                            flex-wrap: wrap;
+                            align-items:center;
+                            justify-content: center;
+                            .carousel-personalizado{
+                                transition: ease-in-out;
+                                position: relative;
+                                &__imagen{
+                                            width: 80%;
+                                            height: 80%;
+                                }
+                            }
+                            .marca-slogan{
+                                            width: 50%;
+                                            display: flex;
+                                            flex-direction: column;
+                                            position: absolute;
+                                            h1{
+                                                font-family: 'Fleur De Leah', cursive;
+                                                font-weight: 580;
+                                                font-size: 3rem;
+                                                color: $color-crema;
+                                                text-shadow: 1px 1px 1px rgba(209,44,94,0.7);
+                                            }
+                                            h2{
+                                                font-family: 'Fleur De Leah', cursive;
+                                                font-weight: 400;
+                                                font-size: 2.5rem;
+                                                color: $color-crema;
+                                                text-shadow: 1px 1px 1px rgba(209,44,94,0.7) ;
+                                                align-self: flex-end;
+                                            }
+            }
+            }
+            & .saludoContainer{//contenedor del texto de bienvenida
+                width: 80%;
+                margin-left: auto;
+                margin-right: auto;
+                p{
+                    color: $color-text ;
+                    text-shadow: 1px 1px 0 rgba(184, 75, 108, 0.1);
+                    font-size: 1.3rem;
+                    line-height: 1.5;
+                    & span{
+                            color: $color-resaltado;
+                            text-shadow: $sombra-color-resaltado;
+                    }
+                    & .sloganTwo{
+                                color: $color-resaltado;
+                                text-shadow: $sombra-color-resaltado;
+                                font-family: 'italianno', cursive;
+                                font-size: 2.2rem;
+                                font-weight: 500;
+                    }
+            }
+            }
+}
+
+
+/*______________________________________________SECCION DESTACADOS index__________________________________*/
+
+    .destacados {
+                 width: 100%;
+                max-width: 1200px;
+                height: auto;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                margin: auto;
+                & a{
+                    color:$color-card;
+                    font-weight: 600;
+                    margin: auto;
+                    display: block;
+                    width: 80%;
+                    height: auto;
+                    padding: 1rem;
+                    box-shadow: inset -10px -10px 10px rgba(209,44,94,0.4),
+                                inset -2px -2px 1px rgba(209,44,94,0.7),
+                                inset 10px 10px 10px rgba(209,44,94,0.4),
+                                inset 1px 1px 1px rgba(209,44,94,0.7),
+                                -5px -5px 5px rgba(209,44,94,0.2),
+                                -1px -1px 0 rgba(209,44,94,0.9),
+                                1px 1px 0 rgba(209,44,94,0.9),
+                                5px 5px 5px rgba(209,44,94,0.2);
+
+                    text-decoration: none;
+                    &:hover{
+                            color: $color-carmin;
+                            box-shadow: inset -15px -15px 15px rgba(162,35,29,0.5),
+                                        inset -4px -4px 2px rgba(162,35,29,0.7),
+                                        inset 15px 15px 15px rgba(162,35,29,0.5),
+                                        inset 2px 2px 2px rgba(162,35,29,0.7),
+                                        -5px -5px 5px rgba(162,35,29,0.3),
+                                        -1px -1px 0 rgba(162,35,29,0.9),
+                                        1px 1px 0 rgba(162,35,29,0.9),
+                                        5px 5px 5px rgba(162,35,29,0.3);
+                    }
+                }
+            }
+
+
+.otrosProductos{
+    height: 10rem;
+}
+footer{
+    background-color: $fondo-header;
+}
+
+/*_______________________________________________productos.html_____________________________________*/
+#tituloCatalogo{
+                width: 80%;
+                margin: auto;
+
+                & h1{
+                    color: $color-text;
+                    font-family: 'italianno',cursive;
+                    font-size: 3rem;
+                    margin-left: 2rem;
+                }
+                & p{
+                    color: $color-text;
+                    font-size: 1.3rem;
+                    font-weight: 500;
+
+                    & span{
+                            color: $color-resaltado;
+                    }
+                }
+}
+
+
+#sectionCatalogo{
+                width: 100%;
+                max-width: 1200px;
+                height: auto;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                margin: auto;}
+                .catalogo{
+                        background-color: $fondo-card;
+                        width: 330px;
+                        height: auto;
+                        border-radius: 8px;
+                        box-shadow: 0 2px 2px rgba(0,0,0,0.2),
+                                    2px 2px 0px rgba(255, 203, 219, 1),
+                                    inset 10px 10px 10px rgba(255, 203, 219, 0.7),
+                                    inset -10px -10px 10px rgba(255, 203, 219, 0.7),
+                                    -2px -2px 0px rgba(255, 203, 219,1);
+                        overflow: hidden;
+                        margin: 1.5rem;
+                        text-align: center;
+                        transition: all 0.25s;
+                        &:hover{
+                                transform: translateY(-15px);
+                                box-shadow: 0 12px 16px rgba(0,0,0,0.2);
+                        }
+                        &__foto{
+                            width: 100%;
+                            height: auto;
+                        }
+                        &__nombre {
+                            font-size: 1.5rem;
+                            color:$color-card;
+                            text-shadow: -2px -1px rgba(255,255,191,0.8),
+                                            1px 1px rgba(0,0,0,0.2);
+                            font-weight: 600;
+                        }
+                        &__marca {
+                            color: $color-card;
+                            text-shadow: 1px 1px rgba(0,0,0,0.2);
+                            padding: 1rem;
+                            font-size: 1.2rem;
+                            font-style: italic;
+                            font-weight: 500;
+
+                        }
+                        &__precio{
+                                color: $color-card;
+
+                        }
+                        &__compras{
+                                    border-radius: 50px;
+                                    & img{
+                                        width: 50%;
+                                    }
+                                    &:hover{
+                                            border: 2px solid rgba(209,44,94,0.7);
+                                    }
+
+                        }
+
+                }
+
+
+/*BOOTSTRAP PERSONALIZADO____________________________________________*/
+
+.btn-personalized{
+    background-color: $fondo-header;
+                    & img{
+                        width: 50%;
+                        height: 50%;
+                        border-radius: 40px;
+                    }
+                    & span{
+                        font-size: 1.5rem;
+                        color: $color-text;
+                    }
+}
