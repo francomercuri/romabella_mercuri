@@ -26,7 +26,7 @@ function mostrarProductos(array) {
                              <h4 class = "catalogo__nombre"> ${prenda.nombre}  </h4>
                              <p class = "catalogo__marca"> ${prenda.marca}</p>
                              <p class = "catalogo__precio"> $${prenda.precio} </p>
-                             <a id = boton${prenda.id} class = "catalogo__compra"><img src="../image/carrito.jpg" alt="Ver Carrito"> </a>
+                             <a id = boton${prenda.id} class = "catalogo__compra"><img src="../image/carrito.png" alt="Ver Carrito"> </a>
                              </div>`;
 
                              sectionCatalogo.appendChild(divCard);
@@ -58,11 +58,13 @@ function agregarAlCarrito(id) {
     let divCarrito = document.createElement('div');//creo div para el carrito
     divCarrito.classList.add('divCarrito');//asigno clase para el contenedor del carrito
     //Elementos a visualizar en el carrito
-    divCarrito.innerHTML= `<h4 class = "catalogo__nombre"> ${productoAgregar.nombre}  </h4>
-                            <p class = "catalogo__marca"> ${productoAgregar.marca}</p>
-                            <p class = "catalogo__precio"> $${productoAgregar.precio} </p>
-                            <p class = "catalogo__cantidad" id = cantidad${productoAgregar.id}>cantidad: ${productoAgregar.cantidad}</p>
-                            <button class="botonEliminar" id="eliminar${productoAgregar.id}">Eliminar</button>`
+    divCarrito.innerHTML= `<img src= "${productoAgregar.img}" class = "divCarrito__img">
+                            <h4 class = "divCarrito__nombre"> ${productoAgregar.nombre}  </h4>
+                            <p class = "divCarrito__marca"> ${productoAgregar.marca}</p>
+                            <p class = "divCarrito__precio"> $${productoAgregar.precio} </p>
+                            <p class = "divCarrito__cantidad" id = cantidad${productoAgregar.id}>cantidad: ${productoAgregar.cantidad}</p>
+                            <button class="botonEliminar" id="eliminar${productoAgregar.id}">
+                            &#128465; Eliminar</button>`
     //INSERTO EL CONTENIDO CREADO EN EL CARRITO
     contenedorCarrito.appendChild(divCarrito)
     actualizarCarrito()

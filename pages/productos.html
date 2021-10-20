@@ -37,14 +37,24 @@
                     Contacto
                     </a>
                 </li>
-                <li><!--Boton carrito-->
-                    <button type="button" class="btn btn-personalized" data-toggle="modal" data-target="#exampleModal">
-                        <img src="../image/carrito.jpg" alt=""><span id="contadorCarrito">0</span>
-                      </button>
+                <li class="toggle-btn"><!--Boton carrito-->
+                        <img src="../image/carrito.png" alt=""><span id="contadorCarrito">0</span>
                 </li>
             </ul>
         </nav>
     </header>
+    <!-- carrito -->
+    <aside id="sidebar">
+        <h5>Mi carrito</h5>
+        <div class="modal-body" id="contenedorCarrito">
+            <!-- Contenido dinamico -->
+        </div>
+        <div>
+            <p class="precioProducto">Precio total: $<span id="precioTotal"></span></p>
+        </div>
+          <button type="button">Cerrar</button>
+          <button type="button">Ok</button>
+    </aside>
     <!-- BREVE PRESENTACION-->
     <main id="tituloCatalogo">
 
@@ -55,7 +65,7 @@
     </section>
 
 
-  <!-- Modal -->
+  <!-- Modal
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -65,18 +75,11 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <div class="modal-body" id="contenedorCarrito">
-        </div>
-        <div>
-            <p class="precioProducto">Precio total: $<span id="precioTotal"></span></p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-          <button type="button" class="btn btn-primary">Ok</button>
+
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
     <footer>
         <!-- Botonera redes -->
         <nav class="redes">

@@ -12,6 +12,7 @@ $.getJSON('../productos.json', function (data) {
   data.forEach(function (el) {
     return productos.push(el);
   });
+  localStorage.setItem('TiendaRopa', JSON.stringify(data));
   mostrarProductos(productos);
 }); //_____________________________FUNCIÓN PARA MOSTRAR LOS PRODUCTOS________________________________
 
@@ -22,7 +23,7 @@ function mostrarProductos(array) {
     divCard.classList.add('contenedorCards'); //le asigno una clase
     //Creo las cards y su contenido
 
-    divCard.innerHTML += "<div class = \"catalogo\" id=\"catalogo".concat(prenda.id, "\">\n                             <img src= \"").concat(prenda.img, "\" alt=\"").concat(prenda.nombre, ", ").concat(prenda.marca, "\" class =\"catalogo__foto\">\n                             <h4 class = \"catalogo__nombre\"> ").concat(prenda.nombre, "  </h4>\n                             <p class = \"catalogo__marca\"> ").concat(prenda.marca, "</p>\n                             <p class = \"catalogo__precio\"> $").concat(prenda.precio, " </p>\n                             <a id = boton").concat(prenda.id, " class = \"catalogo__compra\"><img src=\"../image/carrito.jpg\" alt=\"Ver Carrito\"> </a>\n                             </div>");
+    divCard.innerHTML += "<div class = \"catalogo\" id=\"catalogo".concat(prenda.id, "\">\n                             <img src= \"").concat(prenda.img, "\" alt=\"").concat(prenda.nombre, ", ").concat(prenda.marca, "\" class =\"catalogo__foto\">\n                             <h4 class = \"catalogo__nombre\"> ").concat(prenda.nombre, "  </h4>\n                             <p class = \"catalogo__marca\"> ").concat(prenda.marca, "</p>\n                             <p class = \"catalogo__precio\"> $").concat(prenda.precio, " </p>\n                             <a id = boton").concat(prenda.id, " class = \"catalogo__compra\"><img src=\"../image/carrito.png\" alt=\"Ver Carrito\"> </a>\n                             </div>");
     sectionCatalogo.appendChild(divCard);
     var botonCompra = document.getElementById("boton".concat(prenda.id));
     botonCompra.addEventListener('click', function () {
@@ -55,7 +56,7 @@ function agregarAlCarrito(id) {
     divCarrito.classList.add('divCarrito'); //asigno clase para el contenedor del carrito
     //Elementos a visualizar en el carrito
 
-    divCarrito.innerHTML = "<h4 class = \"catalogo__nombre\"> ".concat(productoAgregar.nombre, "  </h4>\n                            <p class = \"catalogo__marca\"> ").concat(productoAgregar.marca, "</p>\n                            <p class = \"catalogo__precio\"> $").concat(productoAgregar.precio, " </p>\n                            <p class = \"catalogo__cantidad\" id = cantidad").concat(productoAgregar.id, ">cantidad: ").concat(productoAgregar.cantidad, "</p>\n                            <button class=\"botonEliminar\" id=\"eliminar").concat(productoAgregar.id, "\">Eliminar</button>"); //INSERTO EL CONTENIDO CREADO EN EL CARRITO
+    divCarrito.innerHTML = "<img src= \"".concat(productoAgregar.img, "\" class = \"divCarrito__img\">\n                            <h4 class = \"divCarrito__nombre\"> ").concat(productoAgregar.nombre, "  </h4>\n                            <p class = \"divCarrito__marca\"> ").concat(productoAgregar.marca, "</p>\n                            <p class = \"divCarrito__precio\"> $").concat(productoAgregar.precio, " </p>\n                            <p class = \"divCarrito__cantidad\" id = cantidad").concat(productoAgregar.id, ">cantidad: ").concat(productoAgregar.cantidad, "</p>\n                            <button class=\"botonEliminar\" id=\"eliminar").concat(productoAgregar.id, "\">Eliminar</button>"); //INSERTO EL CONTENIDO CREADO EN EL CARRITO
 
     contenedorCarrito.appendChild(divCarrito);
     actualizarCarrito();
@@ -106,6 +107,10 @@ function memorizar(dato) {
 
 function recordar() {
   var recordar = JSON.parse(localStorage.getItem('carrito'));
+  var stockBack = JSON.parse(localStorage.getItem('TiendaRopa'));
+  stockBack ? stockBack.forEach(function (el) {
+    return productos.push(el);
+  }) : [];
 
   if (recordar) {
     recordar.forEach(function (el) {
