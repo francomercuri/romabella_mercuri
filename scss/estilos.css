@@ -9,6 +9,10 @@ body {
   background-color: #fffff6;
 }
 
+main {
+  padding-top: 7rem;
+}
+
 #marca {
   display: none;
 }
@@ -19,9 +23,18 @@ body {
 
 /*_______________________________________HEADER________________________________________*/
 header {
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  padding-top: 0.5rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   width: 100%;
-  height: 5rem;
+  height: 4rem;
   background-color: #fff0f0;
+  -webkit-box-shadow: -15px 0 15px rgba(0, 0, 0, 0.1), -10px 0 10px rgba(0, 0, 0, 0.3), -3px 0 3px rgba(0, 0, 0, 0.4);
+          box-shadow: -15px 0 15px rgba(0, 0, 0, 0.1), -10px 0 10px rgba(0, 0, 0, 0.3), -3px 0 3px rgba(0, 0, 0, 0.4);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -248,13 +261,13 @@ footer {
 
 .catalogo {
   background-color: #fff0f0;
-  width: 330px;
+  width: auto;
   height: auto;
   border-radius: 8px;
   -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2), 2px 2px 0px #ffcbdb, inset 10px 10px 10px rgba(255, 203, 219, 0.7), inset -10px -10px 10px rgba(255, 203, 219, 0.7), -2px -2px 0px #ffcbdb;
           box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2), 2px 2px 0px #ffcbdb, inset 10px 10px 10px rgba(255, 203, 219, 0.7), inset -10px -10px 10px rgba(255, 203, 219, 0.7), -2px -2px 0px #ffcbdb;
   overflow: hidden;
-  margin: 1.5rem;
+  margin: 0.8rem;
   text-align: center;
   -webkit-transition: all 0.25s;
   transition: all 0.25s;
@@ -272,14 +285,23 @@ footer {
   height: auto;
 }
 
-.catalogo__nombre {
+.catalogo__productName {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.catalogo__productName--nombre {
   font-size: 1.5rem;
   color: #d12c5e;
   text-shadow: -2px -1px rgba(255, 255, 191, 0.8), 1px 1px rgba(0, 0, 0, 0.2);
   font-weight: 600;
 }
 
-.catalogo__marca {
+.catalogo__productName--marca {
   color: #d12c5e;
   text-shadow: 1px 1px rgba(0, 0, 0, 0.2);
   padding: 1rem;
@@ -308,6 +330,7 @@ footer {
 /*Botón de carrito en el header*/
 .toggle-btn {
   background-color: #fff0f0;
+  cursor: pointer;
 }
 
 .toggle-btn img {
@@ -322,14 +345,35 @@ footer {
 }
 
 /*Sidebar - carrito*/
+#sidebar-bkground {
+  position: fixed;
+  right: 0;
+  top: 4rem;
+  width: 100%;
+  height: 100%;
+  background-color: #a2231d;
+  opacity: 0.5;
+  right: -100rem;
+  -webkit-transition: all 700ms linear;
+  transition: all 700ms linear;
+}
+
+#sidebar-bkground.active {
+  right: 0;
+}
+
 #sidebar {
   position: fixed;
-  width: 12.5rem;
+  width: 15rem;
   height: 100%;
-  background-color: #fff0f0;
+  background: -webkit-gradient(linear, left top, right top, from(rgba(233, 186, 188, 0)), color-stop(1%, rgba(233, 186, 188, 0.8)), to(rgba(233, 186, 188, 0.9)));
+  background: linear-gradient(90deg, rgba(233, 186, 188, 0) 0%, rgba(233, 186, 188, 0.8) 1%, rgba(233, 186, 188, 0.9) 100%);
+  -webkit-box-shadow: -10px 0 10px rgba(0, 0, 0, 0.3), -15px 0 15px rgba(0, 0, 0, 0.1), inset 5px 0 5px rgba(0, 0, 0, 0.2), inset 10px 0 10px rgba(0, 0, 0, 0.1);
+          box-shadow: -10px 0 10px rgba(0, 0, 0, 0.3), -15px 0 15px rgba(0, 0, 0, 0.1), inset 5px 0 5px rgba(0, 0, 0, 0.2), inset 10px 0 10px rgba(0, 0, 0, 0.1);
   -webkit-transition: all 500ms linear;
   transition: all 500ms linear;
-  right: 0;
+  top: 4rem;
+  right: -15rem;
 }
 
 #sidebar.active {
@@ -372,7 +416,7 @@ footer {
 }
 
 #sidebar .divCarrito .botonEliminar {
-  margin: 0 auto;
+  margin: 0 auto 2rem auto;
   background-color: #a2231d;
   color: #ffffbf;
   border: 1px solid rgba(100, 100, 100, 0.3);

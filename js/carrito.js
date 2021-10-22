@@ -5,9 +5,11 @@ let carritoDeCompras = [];
 let productos = []
 const contadorCarrito = document.getElementById('contadorCarrito');
 const precioTotal = document.getElementById('precioTotal');
+const btnToggle = document.querySelector('.toggle-btn');
+const carritoBkg = document.getElementById('sidebar-bkground');
+const btnCerrar = document.getElementById('btn-cerrar');
 
 $.getJSON('../productos.json',(data) => {
-    console.log(data)
     data.forEach(el => productos.push(el));
     localStorage.setItem('TiendaRopa', JSON.stringify(data))
     mostrarProductos(productos);
@@ -23,8 +25,10 @@ function mostrarProductos(array) {
         //Creo las cards y su contenido
         divCard.innerHTML += `<div class = "catalogo" id="catalogo${prenda.id}">
                              <img src= "${prenda.img}" alt="${prenda.nombre}, ${prenda.marca}" class ="catalogo__foto">
-                             <h4 class = "catalogo__nombre"> ${prenda.nombre}  </h4>
-                             <p class = "catalogo__marca"> ${prenda.marca}</p>
+                             <div class= "catalogo__productName">
+                             <h4 class = "catalogo__productName--nombre"> ${prenda.nombre}  </h4>
+                             <p class = "catalogo__productName--marca"> ${prenda.marca}</p>
+                             </div>
                              <p class = "catalogo__precio"> $${prenda.precio} </p>
                              <a id = boton${prenda.id} class = "catalogo__compra"><img src="../image/carrito.png" alt="Ver Carrito"> </a>
                              </div>`;
@@ -99,7 +103,7 @@ busqueda.onkeyup = () => {//Cuando se presione una tecla
     mostrarProductos(buscados);
 }
 
-//__________________FUNCION AGREGAR A LOCAL STPRAGE_____________________________
+//__________________FUNCION AGREGAR A LOCAL STORAGE_____________________________
 function memorizar(dato){
 localStorage.setItem('carrito', JSON.stringify(dato));
 }
@@ -117,3 +121,21 @@ if(recordar){
        }
 }
 
+//__________________BOTON CARRITO PARA ABRIR SIDEBAR__________________
+
+//Al agregar la clase 'active' se desplaza el carrito (en formato sidebar) y un fondo translúcido
+btnToggle.addEventListener('click', ()=>{
+    document.getElementById('sidebar').classList.toggle('active');
+    document.getElementById('sidebar-bkground').classList.toggle('active');
+})
+
+//Al hacer click sobre el fondo translúcido (carritoBkg) se borra la clase y se oculta el carrito
+carritoBkg.addEventListener('click',()=>{
+    document.getElementById('sidebar').classList.remove('active');
+    carritoBkg.classList.remove('active');
+})
+//Al hacer click sobre el boton cerrar (btnCerrar) se borra la clase y se oculta el carrito
+btnCerrar.addEventListener('click',()=>{
+    document.getElementById('sidebar').classList.remove('active');
+    carritoBkg.classList.remove('active');
+})

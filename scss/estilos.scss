@@ -9,6 +9,7 @@ $color-card: #d12c5e;
 $color-resaltado: #e2376a;
 $color-carmin: #a2231d;
 $sombra-color-resaltado: 1px 1px 0 rgba(209, 44, 94, 0.2);
+$header-size: 4rem;
 
 
 // DEFINO LAS VARIABLES AQUI PROVISORIAMENTE
@@ -21,6 +22,9 @@ $sombra-color-resaltado: 1px 1px 0 rgba(209, 44, 94, 0.2);
  body{
     background-color: $fondo-principal;
  }
+main{
+    padding-top: 7rem;
+}
 #marca{
     display:none;
 }
@@ -30,9 +34,18 @@ $sombra-color-resaltado: 1px 1px 0 rgba(209, 44, 94, 0.2);
 
  /*_______________________________________HEADER________________________________________*/
 header{
+        position: fixed;
+        z-index: 9999;
+        top:0;
+        left: 0;
+        padding-top: 0.5rem;
+        box-sizing: border-box;
         width: 100%;
-        height: 5rem;
+        height: $header-size;
         background-color: $fondo-header;
+        box-shadow: -15px 0 15px rgba(0,0,0,0.1),
+                    -10px 0 10px rgba(0,0,0,0.3),
+                    -3px 0 3px rgba(0,0,0,0.4);
         display: flex;
         justify-content: space-between;
         align-items: flex-end;
@@ -228,7 +241,7 @@ footer{
                 margin: auto;}
                 .catalogo{
                         background-color: $fondo-card;
-                        width: 330px;
+                        width: auto;
                         height: auto;
                         border-radius: 8px;
                         box-shadow: 0 2px 2px rgba(0,0,0,0.2),
@@ -237,7 +250,7 @@ footer{
                                     inset -10px -10px 10px rgba(255, 203, 219, 0.7),
                                     -2px -2px 0px rgba(255, 203, 219,1);
                         overflow: hidden;
-                        margin: 1.5rem;
+                        margin: 0.8rem;
                         text-align: center;
                         transition: all 0.25s;
                         &:hover{
@@ -248,21 +261,25 @@ footer{
                             width: 100%;
                             height: auto;
                         }
-                        &__nombre {
-                            font-size: 1.5rem;
-                            color:$color-card;
-                            text-shadow: -2px -1px rgba(255,255,191,0.8),
-                                            1px 1px rgba(0,0,0,0.2);
-                            font-weight: 600;
-                        }
-                        &__marca {
-                            color: $color-card;
-                            text-shadow: 1px 1px rgba(0,0,0,0.2);
-                            padding: 1rem;
-                            font-size: 1.2rem;
-                            font-style: italic;
-                            font-weight: 500;
+                        &__productName{
+                            display: flex;
+                            justify-content: center;
+                            &--nombre {
+                                font-size: 1.5rem;
+                                color:$color-card;
+                                text-shadow: -2px -1px rgba(255,255,191,0.8),
+                                                1px 1px rgba(0,0,0,0.2);
+                                font-weight: 600;
+                            }
+                            &--marca {
+                                color: $color-card;
+                                text-shadow: 1px 1px rgba(0,0,0,0.2);
+                                padding: 1rem;
+                                font-size: 1.2rem;
+                                font-style: italic;
+                                font-weight: 500;
 
+                            }
                         }
                         &__precio{
                                 color: $color-card;
@@ -287,6 +304,7 @@ footer{
 /*Botón de carrito en el header*/
 .toggle-btn{
     background-color: $fondo-header;
+    cursor: pointer;
                     & img{
                         width: 50%;
                         height: 50%;
@@ -298,13 +316,34 @@ footer{
                     }
 }
 /*Sidebar - carrito*/
+#sidebar-bkground{
+                    position:fixed;
+                    right: 0;
+                    top:$header-size;
+                    width: 100%;
+                    height: 100%;
+                    background-color: $color-carmin;
+                    opacity: 0.5;
+                    right: -100rem;
+                    transition: all 700ms linear;
+                    &.active{
+                        right: 0;
+                    }
+}
+
+
 #sidebar{
         position:fixed;
-        width: 12.5rem;
+        width: 15rem;
         height: 100%;
-        background-color: $fondo-header;
+        background:linear-gradient(90deg,rgba(233, 186, 188,0) 0%,rgba(233, 186, 188,0.8)1%,rgba(233, 186, 188,0.9)100%);
+        box-shadow:-10px 0 10px rgba(0,0,0,0.3),
+                    -15px 0 15px rgba(0,0,0,0.1),
+                    inset 5px 0 5px rgba(0,0,0,0.2),
+                    inset 10px 0 10px rgba(0,0,0,0.1);
         transition: all 500ms linear;
-        right: 0;
+        top:$header-size;
+        right: -15rem;
         &.active{
             right: 0;
         }
@@ -330,7 +369,7 @@ footer{
                                 color: $color-text;
                     }
                     & .botonEliminar{
-                                    margin: 0 auto;
+                                    margin: 0 auto 2rem auto;
                                     background-color: $color-carmin;
                                     color:$color-crema;
                                     border: 1px solid rgba(100, 100,100,0.3);
