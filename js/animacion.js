@@ -17,3 +17,5 @@ $(window).on ('load',function(){
         $("#marca").slideDown(1000),
         $("#slogan").slideDown(1000);
 });
+
+

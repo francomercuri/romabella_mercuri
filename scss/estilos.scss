@@ -1,13 +1,16 @@
 //imports
 @import url('https://fonts.googleapis.com/css2?family=Fleur+De+Leah&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
 $fondo-principal:   #fffff6;
 $color-crema: #ffffbf;
+$color-amarillo:#f5e269;
 $fondo-header: #fff0f0;
 $color-text: #d12c5e;
 $fondo-card: #fff0f0;
 $color-card: #d12c5e;
 $color-resaltado: #e2376a;
 $color-carmin: #a2231d;
+$color-confirmacion: #9ec024;
 $sombra-color-resaltado: 1px 1px 0 rgba(209, 44, 94, 0.2);
 $header-size: 4rem;
 
@@ -18,6 +21,11 @@ $header-size: 4rem;
 *{
     margin: 0;
     padding: 0;
+    font-family: 'Dancing Script', cursive;
+    cursor: url(../image/cursor/cursor.png),auto;
+}
+a, button{
+    cursor: url(../image/cursor/cursor_mano.png),auto;
 }
  body{
     background-color: $fondo-principal;
@@ -34,14 +42,15 @@ main{
 
  /*_______________________________________HEADER________________________________________*/
 header{
+        height: $header-size;
         position: fixed;
-        z-index: 9999;
         top:0;
         left: 0;
         padding-top: 0.5rem;
+        z-index: 1;
         box-sizing: border-box;
         width: 100%;
-        height: $header-size;
+        transition: all 1000ms linear;
         background-color: $fondo-header;
         box-shadow: -15px 0 15px rgba(0,0,0,0.1),
                     -10px 0 10px rgba(0,0,0,0.3),
@@ -91,6 +100,7 @@ header{
         }
     }
 }
+
 
 /*_______________________________ index main (NOSOTROS)___________________________________*/
 .nosotros{
@@ -304,7 +314,7 @@ footer{
 /*Botón de carrito en el header*/
 .toggle-btn{
     background-color: $fondo-header;
-    cursor: pointer;
+    cursor: url(../image/cursor/cursor_mano.png),auto;
                     & img{
                         width: 50%;
                         height: 50%;
@@ -318,7 +328,6 @@ footer{
 /*Sidebar - carrito*/
 #sidebar-bkground{
                     position:fixed;
-                    right: 0;
                     top:$header-size;
                     width: 100%;
                     height: 100%;
@@ -326,6 +335,7 @@ footer{
                     opacity: 0.5;
                     right: -100rem;
                     transition: all 700ms linear;
+                    cursor: url(../image/cursor/cursor_mano.png),auto;
                     &.active{
                         right: 0;
                     }
@@ -334,50 +344,123 @@ footer{
 
 #sidebar{
         position:fixed;
-        width: 15rem;
-        height: 100%;
-        background:linear-gradient(90deg,rgba(233, 186, 188,0) 0%,rgba(233, 186, 188,0.8)1%,rgba(233, 186, 188,0.9)100%);
+        top:$header-size;
+        width: 25rem;
+        height: 90%;
+        transition: all 500ms linear;
+        overflow:scroll;
+        right: -25rem;
+        background:linear-gradient(90deg,rgba(233, 186, 188,0) 0%,rgba(255, 210, 210,1)1%,rgba(255, 210, 210,1)100%);
         box-shadow:-10px 0 10px rgba(0,0,0,0.3),
                     -15px 0 15px rgba(0,0,0,0.1),
                     inset 5px 0 5px rgba(0,0,0,0.2),
                     inset 10px 0 10px rgba(0,0,0,0.1);
-        transition: all 500ms linear;
-        top:$header-size;
-        right: -15rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+
+
+        & h5{
+            font-family: 'fleur de leah', cursive;
+            font-size: 2.5rem;
+            color: $color-text;
+            margin-top: 2rem;
+        }
+        & div .precioProducto{
+                                font-family: 'italianno' , cursive;
+                                font-size: 2rem;
+                                color: $color-text;
+        }
         &.active{
             right: 0;
         }
         .divCarrito{
-                    display: flex;
-                    flex-direction: column;
+                    margin-top: 1rem;
+                    display: grid;
                     align-items: center;
+                    grid-template-areas: "imagen nombre nombre"
+                                        "imagen marca marca"
+                                        "imagen cantidad precio"
+                                        "imagen eliminar eliminar";
                     &__img{
                         width: 6rem;
                         height: auto;
+                        grid-area: imagen;
                     }
                     &__nombre{
+                        margin-left: 1rem;
                             color: $color-text;
+                            grid-area: nombre;
                     }
                     &__marca{
+                        margin-left: 1rem;
                             color: $color-text;
                             font-style: italic;
+                            grid-area: marca;
                     }
                     &__precio{
+                        margin-left: 1rem;
                                 color: $color-resaltado;
+                                grid-area: precio;
                     }
                     &__cantidad{
+                        margin-left: 1rem;
                                 color: $color-text;
+                                grid-area: cantidad;
                     }
                     & .botonEliminar{
                                     margin: 0 auto 2rem auto;
                                     background-color: $color-carmin;
                                     color:$color-crema;
+                                    font-style: 'italianno', cursive;
                                     border: 1px solid rgba(100, 100,100,0.3);
                                     padding: 4px;
                                     opacity:0.8;
+                                    grid-area: eliminar;
+                                    cursor: url(../image/cursor/cursor_mano.png),auto;
                                     &:hover{
                                         opacity:1;
                                     }
                     }
+        }
+        .botoneraSidebar{
+                        display: flex;
+                        justify-content: space-between;
+                        padding-bottom: 2rem;
+                        & #btn-cerrar{
+                                    margin-right: 1rem;
+                                    width: 7.5rem;
+                                    height: 4rem;
+                                    padding: 0.5rem;
+                                    font-family: 'italianno', cursive;
+                                    font-size: 1.6rem;
+                                    letter-spacing: 2px;
+                                    font-weight: 500;
+                                    text-shadow: 1px 1px 1px rgba(0,0,0,0.7),
+                                                -1px -1px 1px rgba(0,0,0,0.2);
+                                    border-radius: 40px;
+                                    background-color: $color-carmin;
+                                    color: $color-crema;
+                                    cursor: url(../image/cursor/cursor_mano.png),auto;
+                        }
+                        & #btn-confirm{
+                                    width: 7.5rem;
+                                    height: 4rem;
+                                    padding: 0.5rem;
+                                    font-family: 'italianno', cursive;
+                                    font-size: 1.7rem;
+                                    letter-spacing: 1px;
+                                    font-weight: 500;
+                                    text-shadow: 1px 1px 1px rgba(0,0,0,0.7),
+                                                -1px -1px 1px rgba(0,0,0,0.2);
+                                    border-radius: 40px;
+                                    background-color: $color-confirmacion;
+                                    color: $color-crema;
+                                    cursor: url(../image/cursor/cursor_mano.png),auto;
+                                    & span{
+                                        font-family: 'fleur de leah', cursive;
+                                    }
+                        }
         }
 }
