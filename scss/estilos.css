@@ -228,6 +228,36 @@ header ul li a img {
 
 footer {
   background-color: #fff0f0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+footer .redes ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+footer .redes ul li {
+  margin: 1rem;
+  list-style-type: none;
+  display: block;
+}
+
+footer .redes ul li a img {
+  cursor: url(../image/cursor/cursor_mano.png), auto;
+}
+
+footer .legales {
+  margin: 1rem;
+  color: #e2376a;
 }
 
 /*_______________________________________________productos.html_____________________________________*/
@@ -319,6 +349,24 @@ footer {
   font-weight: 500;
 }
 
+.catalogo__talle {
+  background-color: #ffffbf;
+  color: #e2376a;
+  height: 1.5rem;
+  font-weight: 600;
+  border: 1px solid #d12c5e;
+}
+
+.catalogo__talle:active {
+  border: 3px solid red;
+}
+
+.catalogo__option {
+  background-color: #ffffbf;
+  color: #d12c5e;
+  font-weight: 600;
+}
+
 .catalogo__precio {
   color: #d12c5e;
 }
@@ -405,6 +453,7 @@ footer {
 
 #sidebar .miCarrito h5 {
   font-family: 'fleur de leah', cursive;
+  text-align: center;
   font-size: 2.5rem;
   color: #d12c5e;
   margin-top: 2rem;

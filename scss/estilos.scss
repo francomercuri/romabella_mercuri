@@ -216,6 +216,30 @@ header{
 }
 footer{
     background-color: $fondo-header;
+    display: flex;
+    justify-content: space-between;
+    & .redes{
+        & ul{
+            display:flex;
+            justify-content:flex-start;
+            & li{
+                margin: 1rem;
+                list-style-type: none;
+                display: block;
+                & a{
+                    img{
+                        cursor: url(../image/cursor/cursor_mano.png), auto;
+                    }
+                }
+            }
+        }
+    }
+    & .legales{
+        margin: 1rem;
+        color: $color-resaltado;
+
+
+    }
 }
 
 /*_______________________________________________productos.html_____________________________________*/
@@ -291,6 +315,26 @@ footer{
 
                             }
                         }
+                        &__talle{
+                            background-color: $color-crema;
+                            color: $color-resaltado;
+                            height: 1.5rem;
+                            font-weight: 600;
+                            border: 1px solid $color-text;
+
+                            &:active{
+                                border:3px solid red;
+                            }
+
+
+
+                            }
+                            &__option{
+                                background-color: $color-crema;
+                                color: $color-text;
+                                font-weight: 600;
+                            }
+
                         &__precio{
                                 color: $color-card;
 
@@ -366,6 +410,7 @@ footer{
                     margin-bottom: 2rem;
                 & h5{
                     font-family: 'fleur de leah', cursive;
+                    text-align: center;
                     font-size: 2.5rem;
                     color: $color-text;
                     margin-top: 2rem;
