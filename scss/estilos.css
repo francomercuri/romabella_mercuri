@@ -387,10 +387,8 @@ footer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -399,7 +397,13 @@ footer {
           justify-content: space-evenly;
 }
 
-#sidebar h5 {
+#sidebar .miCarrito {
+  top: 0;
+  height: 20%;
+  margin-bottom: 2rem;
+}
+
+#sidebar .miCarrito h5 {
   font-family: 'fleur de leah', cursive;
   font-size: 2.5rem;
   color: #d12c5e;
@@ -418,11 +422,13 @@ footer {
 
 #sidebar .divCarrito {
   margin-top: 1rem;
+  padding-bottom: 1rem;
   display: -ms-grid;
   display: grid;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  border-bottom: 1px dashed #d12c5e;
       grid-template-areas: "imagen nombre nombre" "imagen marca marca" "imagen cantidad precio" "imagen eliminar eliminar";
 }
 

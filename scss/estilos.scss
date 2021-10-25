@@ -356,16 +356,20 @@ footer{
                     inset 5px 0 5px rgba(0,0,0,0.2),
                     inset 10px 0 10px rgba(0,0,0,0.1);
         display: flex;
-        flex-direction: column;
+        flex-wrap: wrap;
+        // flex-direction: column;
         align-items: center;
         justify-content: space-evenly;
-
-
-        & h5{
-            font-family: 'fleur de leah', cursive;
-            font-size: 2.5rem;
-            color: $color-text;
-            margin-top: 2rem;
+        & .miCarrito{
+                    top: 0;
+                    height: 20%;
+                    margin-bottom: 2rem;
+                & h5{
+                    font-family: 'fleur de leah', cursive;
+                    font-size: 2.5rem;
+                    color: $color-text;
+                    margin-top: 2rem;
+                }
         }
         & div .precioProducto{
                                 font-family: 'italianno' , cursive;
@@ -377,8 +381,11 @@ footer{
         }
         .divCarrito{
                     margin-top: 1rem;
+                    padding-bottom: 1rem;
                     display: grid;
                     align-items: center;
+                    border-bottom: 1px dashed $color-text;
+
                     grid-template-areas: "imagen nombre nombre"
                                         "imagen marca marca"
                                         "imagen cantidad precio"

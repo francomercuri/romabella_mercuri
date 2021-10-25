@@ -10,9 +10,8 @@ const carritoBkg = document.getElementById('sidebar-bkground');
 const btnCerrar = document.getElementById('btn-cerrar');
 
 $.getJSON('../productos.json',(data) => {
-    data.forEach(el => productos.push(el));
     localStorage.setItem('TiendaRopa', JSON.stringify(data))
-    mostrarProductos(productos);
+    mostrarProductos(data);
 })
 
 //_____________________________FUNCIÓN PARA MOSTRAR LOS PRODUCTOS________________________________
