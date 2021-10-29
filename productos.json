@@ -24,7 +24,7 @@
 
   {
     "id": "PR38-46A",
-    "destacado": false,
+    "destacado": true,
     "nombre": "Pantalon",
     "marca": "Romabella",
     "material": "algodon",
@@ -48,7 +48,7 @@
 
   {
     "id": "CGRXS-XLA",
-    "destacado": false,
+    "destacado": true,
     "nombre": "Conjunto gris",
     "marca": "Romabella",
     "material": "algodon",
@@ -72,7 +72,7 @@
 
   {
     "id": "VOR1-5A",
-    "destacado": false,
+    "destacado": true,
     "nombre": "Vestido ocuro",
     "marca": "Romabella",
     "material": "algodon",
@@ -94,3 +94,4 @@
     "img": "../image/fotos_productos/conjunto_rosa.jpg"
   }
     ]
+

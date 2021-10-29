@@ -9,9 +9,11 @@ const btnToggle = document.querySelector('.toggle-btn');
 const carritoBkg = document.getElementById('sidebar-bkground');
 const btnCerrar = document.getElementById('btn-cerrar');
 
+
 $.getJSON('../productos.json',(data) => {
     localStorage.setItem('TiendaRopa', JSON.stringify(data))
     mostrarProductos(data);
+    recordar();
 })
 
 //_____________________________FUNCIÓN PARA MOSTRAR LOS PRODUCTOS________________________________
@@ -23,7 +25,7 @@ function mostrarProductos(array) {
         divCard.classList.add('contenedorCards');//le asigno una clase
         //Creo las cards y su contenido
         divCard.innerHTML += `<div class = "catalogo" id="catalogo${prenda.id}">
-                             <img src= "${prenda.img}" alt="${prenda.nombre}, ${prenda.marca}" class ="catalogo__foto">
+                             <img src= "${prenda.img}" loading="lazy" alt="${prenda.nombre}, ${prenda.marca}" class ="catalogo__foto">
                              <div class= "catalogo__productName">
                              <h4 class = "catalogo__productName--nombre"> ${prenda.nombre}  </h4>
                              <p class = "catalogo__productName--marca"> ${prenda.marca}</p>
@@ -60,15 +62,23 @@ function agregarAlCarrito(id) {
         actualizarCarrito();
     }else{
         let productoAgregar = productos.find(elegido => elegido.id == id);
-    carritoDeCompras.push(productoAgregar);//se agrega el objeto al carrito
-    productoAgregar.cantidad = 1;
+        //Tomo el valor del talle elegido por el usuario mediante un select
+        productoAgregar.talle = document.getElementById(`talle${productoAgregar.id}`).value;
+
+        carritoDeCompras.push(productoAgregar);//se agrega el objeto al carrito
+        mostrarCarrito(productoAgregar)
+}
+memorizar(carritoDeCompras);
+}
+
+function mostrarCarrito(productoAgregar) {
     let divCarrito = document.createElement('div');//creo div para el carrito
     divCarrito.classList.add('divCarrito');//asigno clase para el contenedor del carrito
     //Elementos a visualizar en el carrito
-    divCarrito.innerHTML= `<img src= "${productoAgregar.img}" class = "divCarrito__img">
+    divCarrito.innerHTML= `<img src= "${productoAgregar.img}" class="divCarrito__img">
                             <h4 class = "divCarrito__nombre"> ${productoAgregar.nombre}  </h4>
                             <p class = "divCarrito__marca"> ${productoAgregar.marca}</p>
-                            <p class="divCarrito__talle">Talle:
+                            <p class="divCarrito__talle">Talle: ${productoAgregar.talle.toUpperCase()}</p>
                             <p class = "divCarrito__precio"> $${productoAgregar.precio} </p>
                             <p class = "divCarrito__cantidad" id = cantidad${productoAgregar.id}>cantidad: ${productoAgregar.cantidad}</p>
                             <button class="botonEliminar" id="eliminar${productoAgregar.id}">
@@ -79,17 +89,21 @@ function agregarAlCarrito(id) {
 
     let botonEliminar = document.getElementById(`eliminar${productoAgregar.id}`)
     botonEliminar.addEventListener('click', ()=>{
-    botonEliminar.parentElement.remove()
-    carritoDeCompras = carritoDeCompras.filter(el => el.id != productoAgregar.id);
+        if(productoAgregar.cantidad == 1){
+            botonEliminar.parentElement.remove()
+            carritoDeCompras = carritoDeCompras.filter(el => el.id != productoAgregar.id);
 
-    memorizar(carritoDeCompras);
-    actualizarCarrito(carritoDeCompras);
+            memorizar(carritoDeCompras);
+            actualizarCarrito();
+        }else{
+            productoAgregar.cantidad = productoAgregar.cantidad - 1;
+            document.getElementById(`cantidad${productoAgregar.id}`).innerHTML = `<p id=cantidad${productoAgregar.id}>Cantidad:${productoAgregar.cantidad}</p>`
+            actualizarCarrito()
+        }
+
     })
 }
-memorizar(carritoDeCompras);
-}
 
-recordar();
 
 //_____________FUNCION PARA ACTUALIZAR CARRITO________________________
 function actualizarCarrito() {
@@ -120,8 +134,10 @@ localStorage.setItem('carrito', JSON.stringify(dato));
 
 if(recordar){
    recordar.forEach( el => {
-       agregarAlCarrito(el.id);
+       carritoDeCompras.push(el)
+       mostrarCarrito(el);
                        })
+        actualizarCarrito()
        }
 }
 
@@ -143,3 +159,4 @@ btnCerrar.addEventListener('click',()=>{
     document.getElementById('sidebar').classList.remove('active');
     carritoBkg.classList.remove('active');
 })
+

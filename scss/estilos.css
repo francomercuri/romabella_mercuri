@@ -465,6 +465,10 @@ footer .legales {
   color: #d12c5e;
 }
 
+#sidebar div .precioProducto #precioTotal {
+  font-size: 1.2rem;
+}
+
 #sidebar.active {
   right: 0;
 }
@@ -478,14 +482,15 @@ footer .legales {
       -ms-flex-align: center;
           align-items: center;
   border-bottom: 1px dashed #d12c5e;
-      grid-template-areas: "imagen nombre nombre" "imagen marca marca" "imagen cantidad precio" "imagen eliminar eliminar";
+  min-height: 10rem;
+      grid-template-areas: "imagen nombre nombre" "imagen marca marca" "imagen talle cantidad" "imagen precio precio" "imagen eliminar eliminar";
 }
 
 #sidebar .divCarrito__img {
   width: 6rem;
   height: auto;
   -ms-grid-row: 1;
-  -ms-grid-row-span: 4;
+  -ms-grid-row-span: 5;
   -ms-grid-column: 1;
   grid-area: imagen;
 }
@@ -509,11 +514,21 @@ footer .legales {
   grid-area: marca;
 }
 
+#sidebar .divCarrito__talle {
+  margin-left: 1rem;
+  color: #d12c5e;
+  font-style: italic;
+  -ms-grid-row: 3;
+  -ms-grid-column: 2;
+  grid-area: talle;
+}
+
 #sidebar .divCarrito__precio {
   margin-left: 1rem;
   color: #e2376a;
-  -ms-grid-row: 3;
-  -ms-grid-column: 3;
+  -ms-grid-row: 4;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
   grid-area: precio;
 }
 
@@ -521,7 +536,7 @@ footer .legales {
   margin-left: 1rem;
   color: #d12c5e;
   -ms-grid-row: 3;
-  -ms-grid-column: 2;
+  -ms-grid-column: 3;
   grid-area: cantidad;
 }
 
@@ -533,7 +548,7 @@ footer .legales {
   border: 1px solid rgba(100, 100, 100, 0.3);
   padding: 4px;
   opacity: 0.8;
-  -ms-grid-row: 4;
+  -ms-grid-row: 5;
   -ms-grid-column: 2;
   -ms-grid-column-span: 2;
   grid-area: eliminar;
@@ -542,6 +557,68 @@ footer .legales {
 
 #sidebar .divCarrito .botonEliminar:hover {
   opacity: 1;
+}
+
+#sidebar .medioPago {
+  width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#sidebar .medioPago h5 {
+  color: #d12c5e;
+}
+
+#sidebar .medioPago input[type="radio"] {
+  display: none;
+}
+
+#sidebar .medioPago input[type="radio"]:checked + label {
+  padding: 5px 15px;
+  background: rgba(209, 44, 94, 0.8);
+  border-radius: 2px;
+  color: #ffffbf;
+}
+
+#sidebar .medioPago input[type="radio"]:checked + label::before {
+  display: none;
+}
+
+#sidebar .medioPago label {
+  cursor: url(../image/cursor/cursor_mano.png), auto;
+  font-size: 1rem;
+  border-radius: 3px;
+  color: #d12c5e;
+  padding: 5px 15px 5px 51px;
+  display: inline-block;
+  position: relative;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+#sidebar .medioPago label:hover {
+  background-color: rgba(209, 44, 94, 0.2);
+}
+
+#sidebar .medioPago label:before {
+  content: "";
+  height: 17px;
+  width: 17px;
+  display: inline-block;
+  background: none;
+  border: 3px solid #d12c5e;
+  border-radius: 50%;
+  position: absolute;
+  left: 17px;
+  top: 10px;
 }
 
 #sidebar .botoneraSidebar {
@@ -587,5 +664,175 @@ footer .legales {
 
 #sidebar .botoneraSidebar #btn-confirm span {
   font-family: 'fleur de leah', cursive;
+}
+
+.tj-main {
+  background-color: #fffff6;
+}
+
+.tj-main .tj-container {
+  width: 90%;
+  max-width: 1000px;
+  padding: 40px 20px;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.tj-main .tj-container .tarjeta {
+  width: 100%;
+  max-width: 550px;
+  position: relative;
+  color: #fff;
+  -webkit-transition: all 3s ease;
+  transition: all 3s ease;
+  -webkit-transform: rotateY(0deg);
+          transform: rotateY(0deg);
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  cursor: url(../image/cursor/cursor_mano.png), auto;
+  z-index: 2;
+  /*__________________________ESTILOS DELANTEROS TARJETA___________________________*/
+  /*_____________________________ESTILOS TRASEROS TARJETA DE CREDITO______________________*/
+}
+
+.tj-main .tj-container .tarjeta.tj-active {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+
+.tj-main .tj-container .tarjeta > div {
+  padding: 30px;
+  border-radius: 15px;
+  min-height: 315px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-shadow: 0 10px 10px 0 rgba(90, 116, 148, 0.3);
+          box-shadow: 0 10px 10px 0 rgba(90, 116, 148, 0.3);
+}
+
+.tj-main .tj-container .tarjeta .tj-anverso {
+  width: 100%;
+  background: url(../image/tarjeta/fondo_tc.jpg);
+  background-size: cover;
+}
+
+.tj-main .tj-container .tarjeta .tj-anverso .tj-logo {
+  text-align: right;
+  min-height: 50px;
+}
+
+.tj-main .tj-container .tarjeta .tj-anverso .tj-logo img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  max-width: 80px;
+}
+
+.tj-main .tj-container .tarjeta .tj-anverso .tj-chip {
+  max-height: 60px;
+  width: 100%;
+  max-width: 80px;
+  margin-bottom: 20px;
+}
+
+.tj-main .tj-container .tarjeta .tj-anverso .grupo .tj-label {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1rem;
+  color: #7d8994;
+  margin-bottom: 5px;
+}
+
+.tj-main .tj-container .tarjeta .tj-anverso .grupo .tj-numero {
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  color: #fff;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+}
+
+.tj-main .tj-container .tarjeta .tj-anverso .grupo .tj-nombre {
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  color: #fff;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+}
+
+.tj-main .tj-container .tarjeta .tj-anverso .grupo .tj-vencimiento {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #fff;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+}
+
+.tj-main .tj-container .tarjeta .tj-anverso .flexbox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 20px;
+}
+
+.tj-main .tj-container .tarjeta .tj-reverso {
+  background: url(../image/tarjeta/fondo_tc.jpg);
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+.tj-main .tj-container .tarjeta .tj-reverso .barraMagnetica {
+  height: 40px;
+  background: #000;
+  width: 100%;
+  position: absolute;
+  top: 30px;
+  left: 0;
+}
+
+.tj-main .tj-container .tarjeta .tj-reverso .datos {
+  margin-top: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.tj-main .tj-container .tarjeta .tj-reverso .datos p {
+  margin-bottom: 5px;
+}
+
+.tj-main .tj-container .tarjeta .tj-reverso .datos #firma {
+  width: 70%;
+}
+
+.tj-main .tj-container .tarjeta .tj-reverso .datos #firma .tj-firma {
+  height: 40px;
+  background: repeating-linear-gradient(skyblue 0, skyblue 5px, orange 5px, orange 10px);
 }
 /*# sourceMappingURL=estilos.css.map */
