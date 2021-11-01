@@ -16,14 +16,14 @@
 </head>
 </head>
 <body>
-    <!-- <header>
+    <header class="static-header">
         <div>
             <a href="../index.html">
                 <img src="../image/logo.jpg" alt="logo">
             </a>
-        </div> -->
+        </div>
         <!-- Botonera -->
-        <!-- <nav>
+        <nav>
             <ul>
                 <li>
                     <a href="../index.html/#saludo">
@@ -47,13 +47,16 @@
                 </li>
             </ul>
         </nav>
-    </header> -->
+    </header>
 <main class="tj-main">
+    <!-- contenedor general -->
 <div class="tj-container">
-    <div class="tarjeta tj-active">
+    <!-- Comienzo Tarjeta -->
+    <div class="tarjeta" id="tarjeta">
+        <!-- Cara frontal Tarjeta -->
         <div class="tj-anverso">
-                <div class="tj-logo">
-                    <img src="../image/tarjeta/visa.png" alt="Visa">
+                <div class="tj-logo" id="tj-logo">
+                    <!-- Aquí aparecerá la img de logo dinámica -->
                 </div>
                 <img src="../image/tarjeta/chip-tarjeta.png" class="tj-chip" alt="Chip">
             <div class="tj-datos">
@@ -64,7 +67,7 @@
                 <div class="flexbox">
                 <div class="grupo" id="tj-nombre">
                     <p class="tj-label">Nombre Tarjeta</p>
-                    <p class="tj-nombre">Juan Pérez</p>
+                    <p class="tj-nombre">Juan Perez</p>
                 </div>
                 <div class="grupo" id="vencimiento">
                     <p class="tj-label">Vencimiento</p>
@@ -73,6 +76,7 @@
                 </div>
             </div>
         </div>
+        <!-- Cara Trasera Tarjeta -->
         <div class="tj-reverso">
             <div class="barraMagnetica">
 
@@ -81,11 +85,11 @@
                 <div class="grupo" id="firma">
                     <p class="tj-label">Firma</p>
                     <div class="tj-firma">
-                        <p></p>
+                        <p>Juan Perez</p>
                     </div>
                 </div>
-                <div class="grupo" id="ccv">
-                    <p class="tj-label">CCV</p>
+                <div class="grupo" id="cvv">
+                    <p class="tj-label">CVV</p>
                     <p class="cvv"></p>
                 </div>
             </div>
@@ -95,11 +99,53 @@
             <a href="#" class="link-banco">http://banco.com</a>
         </div>
     </div>
+    <!-- Fin Tarjeta -->
+    <!-- Botón para desplegar Formulario -->
+    <div class="contenedor-btn">
+        <button class="btn-abrir-form" id="btn-abrir-form">
+            <img src="../image/plus-icon.png" alt="+">
+        </button>
+    </div>
+    <!-- FORMULARIO TARJETA -->
+    <form action="" id="formulario-tarjeta" class="formulario-tarjeta">
+        <div class="grupo">
+            <label for="inputNumero">Número de Tarjeta</label>
+            <input type="text" id="inputNumero" maxlength="19" autocomplete="off">
+        </div>
+        <div class="grupo">
+            <label for="inputNombre">Nombre <span>(como aparece en la tarjeta)</span></label>
+            <input type="text" id="inputNombre" maxlength="19" autocomplete="off">
+        </div>
+        <div class="flexbox"><!--Para odenar vencimiento y codigo CVV-->
+            <div class="grupo vencimiento-form">
+                <label for="selectMonth">Vencimiento</label>
+                <div class="flexbox"><!--Para ordenar los select de mes y año de vencimiento-->
+                    <div class="grupo-select">
+                        <select name="month" id="selectMonth">
+                            <option disabled selected>Mes</option>
+                        </select>
+                        <img src="../image/drop-down-icon.png" alt="">
+                    </div>
+                    <div class="grupo-select">
+                        <select name="year" id="selectYear">
+                            <option disabled selected>año</option>
+                        </select>
+                        <img src="../image/drop-down-icon.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="grupo-cvv">
+                <label for="inputCVV">CVV</label>
+                <input type="text" id="inputCVV" maxlength="3">
+            </div>
+        </div>
+        <button type="submit" class="btn-enviar">Confirmar Compra</button>
+    </form>
 </div>
 </main>
-    <!-- <footer> -->
+    <footer class="footer-tarjeta">
         <!-- Botonera redes -->
-        <!-- <nav class="redes">
+        <nav class="redes">
             <ul>
                 <li>
                     <a href="#"><img src="../image/logos_redes/instagram_pincelada.png" alt="Instagram"></a>
@@ -111,15 +157,13 @@
                     <a href="#"><img src="../image/logos_redes/whatsapp_pincelada.png" alt="Whatsapp"></a>
                 </li>
             </ul>
-        </nav> -->
+        </nav>
         <!-- Legales -->
-        <!-- <div class="legales">
+        <div class="legales">
             <p>©Romabella, todos los derechos reservados</p>
         </div>
-    </footer> -->
+    </footer>
        <!-- Propios -->
-       <script src="../js/carrito.js"></script>
-       <script src="../js/animacion.js"></script>
        <script src="../js/tarjeta.js"></script>
        <script src="../js/app.js"></script>
 </body>
