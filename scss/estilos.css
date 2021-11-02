@@ -1038,4 +1038,103 @@ footer .legales {
   bottom: -500px;
   width: 100%;
 }
+
+/*CIERRE TARJETA (MODAL)*/
+#tj-modal {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  min-height: 400px;
+  margin: 0 auto;
+  background: rgba(209, 44, 94, 0.3);
+  border: 2px solid #d12c5e;
+  position: relative;
+  top: 150px;
+  z-index: 4;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-transition: all 3s ease;
+  transition: all 3s ease;
+}
+
+#tj-modal.active {
+  -webkit-transform: rotateY(0);
+          transform: rotateY(0);
+}
+
+#tj-modal .tj-cierre {
+  background: rgba(255, 240, 240, 0.9);
+  margin: 5% auto 0 auto;
+  width: 80%;
+  min-width: 400px;
+  height: 100%;
+  min-height: 300px;
+  -webkit-box-shadow: inset 1px 1px 1px 1px rgba(255, 240, 240, 0.8), 1px 1px 1px 1px rgba(255, 240, 240, 0.7), 3px 3px 3px 3px rgba(255, 240, 240, 0.5), 5px 5px 5px 5px rgba(255, 240, 240, 0.3), inset -1px -1px 1px 1px rgba(255, 240, 240, 0.8), -1px -1px 1px 1px rgba(255, 240, 240, 0.7), -3px -3px 3px 3px rgba(255, 240, 240, 0.5), -5px -5px 5px 5px rgba(255, 240, 240, 0.3);
+          box-shadow: inset 1px 1px 1px 1px rgba(255, 240, 240, 0.8), 1px 1px 1px 1px rgba(255, 240, 240, 0.7), 3px 3px 3px 3px rgba(255, 240, 240, 0.5), 5px 5px 5px 5px rgba(255, 240, 240, 0.3), inset -1px -1px 1px 1px rgba(255, 240, 240, 0.8), -1px -1px 1px 1px rgba(255, 240, 240, 0.7), -3px -3px 3px 3px rgba(255, 240, 240, 0.5), -5px -5px 5px 5px rgba(255, 240, 240, 0.3);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#tj-modal .tj-cierre .tj-modal-title {
+  display: block;
+  text-align: center;
+  font-size: 3.5rem;
+  font-family: 'fleur de leah', cursive;
+  color: #d12c5e;
+}
+
+#tj-modal .tj-cierre #orderNumber {
+  width: 100%;
+}
+
+#tj-modal .tj-cierre #orderNumber .codigoCompra {
+  width: 90%;
+  margin: 0 auto;
+  position: relative;
+  text-align: right;
+}
+
+#tj-modal .tj-cierre #orderNumber .codigoCompra p {
+  font-size: 2rem;
+  color: #d12c5e;
+}
+
+#tj-modal .tj-cierre #orderNumber .codigoCompra p span {
+  color: #e2376a;
+}
+
+#tj-modal .tj-cierre .tj-cierre-btn {
+  justify-self: flex-end;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  border: none;
+  padding: 10px;
+  font-size: 1rem;
+  color: #fff;
+  border-radius: 20px;
+  background: #9ec024;
+  -webkit-box-shadow: 2px 2px 10px 0 rgba(145, 165, 35, 0.4);
+          box-shadow: 2px 2px 10px 0 rgba(145, 165, 35, 0.4);
+  cursor: url(../image/cursor/cursor_mano.png), auto;
+}
+
+#tj-modal .tj-cierre .tj-cierre-btn:hover {
+  background: #91a523;
+}
 /*# sourceMappingURL=estilos.css.map */

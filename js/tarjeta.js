@@ -9,6 +9,7 @@ const monthVencimiento = document.querySelector('#tarjeta #vencimiento .month');
 const yearVencimiento = document.querySelector('#tarjeta #vencimiento .year');
 const cvv = document.querySelector('#tarjeta .cvv');
 
+
 // -----------------FUNCION PARA MOSTRAR EL FRENTE DE LA TARJETA
 const mostrarFrente = () => {
     if(tarjeta.classList.contains('tj-active')){
@@ -125,3 +126,4 @@ formulario.inputCVV.addEventListener('keyup',(e)=>{
 
     cvv.textContent = formulario.inputCVV.value;
 });
+
