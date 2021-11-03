@@ -1137,4 +1137,104 @@ footer .legales {
 #tj-modal .tj-cierre .tj-cierre-btn:hover {
   background: #91a523;
 }
+
+/*CIERRE TARJETA (MODAL)*/
+#carrito-modal {
+  width: 100%;
+  max-width: 1000px;
+  height: auto;
+  min-height: 500px;
+  margin: 0 auto;
+  background: rgba(209, 44, 94, 0.3);
+  border: 2px solid #d12c5e;
+  position: fixed;
+  top: 100px;
+  left: 10%;
+  z-index: 5;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-transition: all 3s ease;
+  transition: all 3s ease;
+}
+
+#carrito-modal.active {
+  -webkit-transform: rotateY(0);
+          transform: rotateY(0);
+}
+
+#carrito-modal .carrito-cierre {
+  background: rgba(255, 240, 240, 0.9);
+  margin: 5% auto 0 auto;
+  width: 80%;
+  min-width: 400px;
+  height: 100%;
+  min-height: 300px;
+  -webkit-box-shadow: inset 1px 1px 1px 1px rgba(255, 240, 240, 0.8), 1px 1px 1px 1px rgba(255, 240, 240, 0.7), 3px 3px 3px 3px rgba(255, 240, 240, 0.5), 5px 5px 5px 5px rgba(255, 240, 240, 0.3), inset -1px -1px 1px 1px rgba(255, 240, 240, 0.8), -1px -1px 1px 1px rgba(255, 240, 240, 0.7), -3px -3px 3px 3px rgba(255, 240, 240, 0.5), -5px -5px 5px 5px rgba(255, 240, 240, 0.3);
+          box-shadow: inset 1px 1px 1px 1px rgba(255, 240, 240, 0.8), 1px 1px 1px 1px rgba(255, 240, 240, 0.7), 3px 3px 3px 3px rgba(255, 240, 240, 0.5), 5px 5px 5px 5px rgba(255, 240, 240, 0.3), inset -1px -1px 1px 1px rgba(255, 240, 240, 0.8), -1px -1px 1px 1px rgba(255, 240, 240, 0.7), -3px -3px 3px 3px rgba(255, 240, 240, 0.5), -5px -5px 5px 5px rgba(255, 240, 240, 0.3);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#carrito-modal .carrito-cierre .carrito-modal-title {
+  display: block;
+  text-align: center;
+  font-size: 3.5rem;
+  font-family: 'fleur de leah', cursive;
+  color: #d12c5e;
+}
+
+#carrito-modal .carrito-cierre #orderNumber {
+  width: 100%;
+}
+
+#carrito-modal .carrito-cierre #orderNumber .codigoCompra {
+  width: 90%;
+  margin: 0 auto;
+  position: relative;
+  text-align: right;
+}
+
+#carrito-modal .carrito-cierre #orderNumber .codigoCompra p {
+  font-size: 2rem;
+  color: #d12c5e;
+}
+
+#carrito-modal .carrito-cierre #orderNumber .codigoCompra p span {
+  color: #e2376a;
+}
+
+#carrito-modal .carrito-cierre .carrito-cierre-btn {
+  justify-self: flex-end;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  border: none;
+  padding: 10px;
+  font-size: 1rem;
+  color: #fff;
+  border-radius: 20px;
+  background: #9ec024;
+  -webkit-box-shadow: 2px 2px 10px 0 rgba(145, 165, 35, 0.4);
+          box-shadow: 2px 2px 10px 0 rgba(145, 165, 35, 0.4);
+  cursor: url(../image/cursor/cursor_mano.png), auto;
+}
+
+#carrito-modal .carrito-cierre .carrito-cierre-btn:hover {
+  background: #91a523;
+}
 /*# sourceMappingURL=estilos.css.map */

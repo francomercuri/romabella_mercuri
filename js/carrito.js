@@ -8,6 +8,11 @@ const precioTotal = document.getElementById('precioTotal');
 const btnToggle = document.querySelector('.toggle-btn');
 const carritoBkg = document.getElementById('sidebar-bkground');
 const btnCerrar = document.getElementById('btn-cerrar');
+//Variables para cierre Carrito
+const modalCarrito = document.querySelector('#carrito-modal');
+const btnAceptarCarrito = document.querySelector('.carrito-cierre-btn');
+const orderNumber = document.querySelector('#orderNumber');
+let aleatorio = Math.round(Math.random()*1000000);
 
 
 $.getJSON('../productos.json',(data) => {
@@ -160,3 +165,19 @@ btnCerrar.addEventListener('click',()=>{
     carritoBkg.classList.remove('active');
 })
 
+  //CIERRE EN CARRITO DE COMPRAS
+  btnConfirm.addEventListener('click', () =>{
+    if (pagoEfectivo.checked == true){
+        document.getElementById('sidebar').classList.remove('active');
+        carritoBkg.classList.remove('active');
+        modalCarrito.classList.add('active');
+        numeroOrden(orderNumber);
+        btnAceptarCarrito.addEventListener('click', ()=>{
+            modalCarrito.classList.remove('active');
+        })
+    }else if(pagoCredito.checked == true){
+        window.location.href ="tarjeta.html";
+    }else{
+        console.log('elige un medio de pago');
+    }
+})
