@@ -396,6 +396,7 @@ footer .legales {
   width: 50%;
   height: 50%;
   border-radius: 40px;
+  cursor: url(../image/cursor/cursor_mano.png), auto;
 }
 
 .toggle-btn span {

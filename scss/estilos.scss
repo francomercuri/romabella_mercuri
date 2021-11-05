@@ -324,9 +324,9 @@ footer{
                             font-weight: 600;
                             border: 1px solid $color-text;
 
-                            &:active{
-                                border:3px solid red;
-                            }
+                            // &:active{
+                            //     border:3px solid red;
+                            // }
 
 
 
@@ -365,6 +365,7 @@ footer{
                         width: 50%;
                         height: 50%;
                         border-radius: 40px;
+                        cursor: url(../image/cursor/cursor_mano.png),auto;
                     }
                     & span{
                         font-size: 1.5rem;

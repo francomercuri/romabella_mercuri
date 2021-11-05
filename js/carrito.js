@@ -2,7 +2,7 @@
 const sectionCatalogo = document.getElementById('sectionCatalogo');
 const contenedorCarrito = document.getElementById('contenedorCarrito');
 let carritoDeCompras = [];
-let productos = []
+// let productos = []
 const contadorCarrito = document.getElementById('contadorCarrito');
 const precioTotal = document.getElementById('precioTotal');
 const btnToggle = document.querySelector('.toggle-btn');
@@ -12,7 +12,11 @@ const btnCerrar = document.getElementById('btn-cerrar');
 const modalCarrito = document.querySelector('#carrito-modal');
 const btnAceptarCarrito = document.querySelector('.carrito-cierre-btn');
 const orderNumber = document.querySelector('#orderNumber');
+const btnConfirm = document.querySelector('#btn-confirm');
+const  pagoEfectivo = document.querySelector('#efectivo');
+const pagoCredito = document.querySelector('#credito');
 let aleatorio = Math.round(Math.random()*1000000);
+
 
 
 $.getJSON('../productos.json',(data) => {
@@ -20,6 +24,8 @@ $.getJSON('../productos.json',(data) => {
     mostrarProductos(data);
     recordar();
 })
+
+
 
 //_____________________________FUNCIÓN PARA MOSTRAR LOS PRODUCTOS________________________________
 function mostrarProductos(array) {
@@ -66,7 +72,7 @@ function agregarAlCarrito(id) {
         memorizar(carritoDeCompras);
         actualizarCarrito();
     }else{
-        let productoAgregar = productos.find(elegido => elegido.id == id);
+        let productoAgregar = stock.find(elegido => elegido.id == id);
         //Tomo el valor del talle elegido por el usuario mediante un select
         productoAgregar.talle = document.getElementById(`talle${productoAgregar.id}`).value;
 
@@ -121,30 +127,11 @@ function actualizarCarrito() {
 let busqueda = document.getElementById('busqueda');
 busqueda.onkeyup = () => {//Cuando se presione una tecla
     let prodBuscado = busqueda.value.toUpperCase();//pasar a mayusculas la busqueda
-    let buscados = productos.filter(producto => producto.nombre.toUpperCase().includes(prodBuscado));
+    let buscados = stock.filter(producto => producto.nombre.toUpperCase().includes(prodBuscado));
     sectionCatalogo.innerHTML="";
     mostrarProductos(buscados);
 }
 
-//__________________FUNCION AGREGAR A LOCAL STORAGE_____________________________
-function memorizar(dato){
-localStorage.setItem('carrito', JSON.stringify(dato));
-}
-
- //________________FUNCION PARA RECUPERAR STORAGE___________________
- function recordar(){
-    let recordar = JSON.parse(localStorage.getItem('carrito'));
-    let stockBack = JSON.parse(localStorage.getItem('TiendaRopa'))
-    stockBack ? stockBack.forEach(el=> productos.push(el)) : []
-
-if(recordar){
-   recordar.forEach( el => {
-       carritoDeCompras.push(el)
-       mostrarCarrito(el);
-                       })
-        actualizarCarrito()
-       }
-}
 
 //__________________BOTON CARRITO PARA ABRIR SIDEBAR__________________
 
