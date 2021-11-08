@@ -2,7 +2,6 @@
 const sectionCatalogo = document.getElementById('sectionCatalogo');
 const contenedorCarrito = document.getElementById('contenedorCarrito');
 let carritoDeCompras = [];
-// let productos = []
 const contadorCarrito = document.getElementById('contadorCarrito');
 const precioTotal = document.getElementById('precioTotal');
 const btnToggle = document.querySelector('.toggle-btn');
