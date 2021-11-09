@@ -1,0 +1,248 @@
+@import 'tarjeta-frente';
+@import 'tarjeta-dorso';
+
+//________________________________FORM PAGO CON TARJETA______________________________________
+
+.static-header{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+.tj-main{
+    background-color: $fondo-principal;
+    position:absolute;
+    top:0;
+    left:0;
+    width: 100%;
+        /*Contenedor principal TARJETA*/
+        & .tj-container{
+                        width: 90%;
+                        max-width: 1000px;
+                        padding: 40px 20px;
+                        margin: auto;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        //estilos tarjeta
+                        & .tarjeta{
+                                width: 100%;
+                                max-width: 550px;
+                                position: relative;
+                                color: #fff;
+                                transition: all 3s ease;
+                                transform: rotateY(0deg);
+                                transform-style: preserve-3d;
+                                backface-visibility: hidden;
+                                cursor:url(../image/cursor/cursor_mano.png),auto;
+                                z-index: 2;
+                                &.tj-active{
+                                    transform: rotateY(180deg);
+                                }
+                                & > div{
+                                    padding: 30px;
+                                    border-radius: 15px;
+                                    min-height: 315px;
+                                    display: flex;
+                                    flex-direction: column;
+                                    justify-content: space-between;
+                                    box-shadow: 0 10px 10px 0 rgba(90,116,148,0.3);
+                                }
+
+
+            /*Boton desplegar formulario*/
+            & .contenedor-btn{
+                & .btn-abrir-form{
+                    width: 50px;
+                    height: 50px;
+                    background: $color-resaltado;
+                    position: relative;
+                    top: -25px;
+                    z-index: 3;
+                    border-radius: 100%;
+                    box-shadow: -5px 4px 8px rgba(90,116,148,0.4);
+                    padding: 5px;
+                    transition: all 0.2s ease;
+                    border: none;
+                    cursor: url(../image/cursor/cursor_mano.png), auto;
+                    & img{
+                        cursor: url(../image/cursor/cursor_mano.png),auto;
+                    }
+                    &:hover{
+                        background: $color-text;
+                    }
+                    &.btn-active{
+                        transform: rotate(45deg);
+                    }
+                }
+            }
+        }
+}
+.formulario-tarjeta{
+    background: $color-crema;
+    width: 100%;
+    max-width: 700px;
+    padding: 150px 30px 30px 30px;
+    border-radius: 10px;
+    position: relative;
+    top: -150px;
+    z-index: 1;
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    transition: clip-path 0.3s ease-out;
+    &.form-active{
+                    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+    & label{
+        display: block;
+        color: $color-text;
+        margin-bottom: 5px;
+        font-size: 1.2rem;
+    }
+    & input{
+            margin-bottom: 20px;
+            text-transform: uppercase;
+    }
+    & select{
+        appearance: none;
+    }
+    & input, select, .btn-enviar{
+        border: 2px solid $fondo-header;
+        font-size: 1.1rem;
+        height: 50px;
+        width: 100%;
+        padding: 5px 12px;
+        transition: 0.3 ease;
+        border-radius: 5px;
+    }
+    & input:hover, select:hover{
+        border: 2px solid $color-resaltado;
+    }
+    & input:focus, select:focus{
+        outline: rgb(4,4,4);
+        box-shadow: 1px 7px 10px -5px rgba(90,116,148,0.3);
+    }
+    & .flexbox{
+        display: flex;
+        justify-content: space-between;
+    }
+    & .vencimiento-form{
+        width: 100%;
+    }
+    & .cvv{
+        min-width: 100px;
+    }
+    & .grupo-select{
+        width: 100%;
+        margin-right: 15px;
+        position: relative;
+        & img{
+            position: absolute;
+            top: 18px;
+            right: 15px;
+            transition: all 3s ease;
+        }
+
+    }
+    & .btn-enviar{
+                border:none;
+                padding: 10px;
+                font-size: 1rem;
+                color: #fff;
+                background: $color-confirmacion;
+                box-shadow: 2px 2px 10px 0 rgba(145, 165, 35,0.4);
+                cursor: url(../image/cursor/cursor_mano.png),auto;
+                &:hover{
+                    background: #91a523;
+                }
+
+    }
+}
+.footer-tarjeta{
+    position: absolute;
+    bottom: -500px;
+    width: 100%;
+}
+
+/*CIERRE TARJETA (MODAL)*/
+#tj-modal{
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    min-height: 400px;
+    margin: 0 auto;
+    background: rgba(209, 44, 94,0.3);
+    border: 2px solid $color-text;
+    position: relative;
+    top: 150px;
+    z-index: 4;
+    transform-style: preserve-3d;
+    transform:rotateY(180deg);
+    backface-visibility: hidden;
+    transition: all 3s ease;
+
+    &.active{
+        transform: rotateY(0);
+    }
+    & .tj-cierre{
+        background:rgba(255, 240, 240,0.9);
+        margin: 5% auto 0 auto;
+        width: 80%;
+        min-width: 400px;
+        height: 100%;
+        min-height: 300px;
+        box-shadow: inset 1px 1px 1px 1px rgba(255,240,240,0.8),
+                    1px 1px 1px 1px rgba(255,240,240,0.7),
+                    3px 3px 3px 3px rgba(255,240,240,0.5),
+                    5px 5px 5px 5px rgba(255,240,240,0.3),
+                    inset -1px -1px 1px 1px rgba(255,240,240,0.8),
+                    -1px -1px 1px 1px rgba(255,240,240,0.7),
+                    -3px -3px 3px 3px rgba(255,240,240,0.5),
+                    -5px -5px 5px 5px rgba(255,240,240,0.3);
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+
+    & .tj-modal-title{
+        display: block;
+        text-align: center;
+        font-size: 3.5rem;
+        font-family: 'fleur de leah', cursive;
+        color: $color-text;
+    }
+    & #orderNumber{
+        width: 100%;
+
+        & .codigoCompra{
+            width: 90%;
+            margin: 0 auto;
+            position: relative;
+            text-align: right;
+            & p{
+                font-size: 2rem;
+                color: $color-text;
+                & span{
+                        color: $color-resaltado;
+                }
+            }
+        }
+    }
+    & .tj-cierre-btn{
+                    justify-self: flex-end;
+                    align-self: center;
+                    border:none;
+                    padding: 10px;
+                    font-size: 1rem;
+                    color: #fff;
+                    border-radius: 20px;
+                    background: $color-confirmacion;
+                    box-shadow: 2px 2px 10px 0 rgba(145, 165, 35,0.4);
+                    cursor: url(../image/cursor/cursor_mano.png),auto;
+                    &:hover{
+                        background: #91a523;
+                    }
+    }
+}
+}
+}

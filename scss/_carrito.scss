@@ -1,0 +1,230 @@
+@import 'carrito-cierre';
+
+/*__________________ESTILOS CARRITO____________________________________________*/
+
+/*Botón de carrito en el header*/
+.toggle-btn{
+    background-color: $fondo-header;
+    cursor: url(../image/cursor/cursor_mano.png),auto;
+                    & img{
+                        width: 50%;
+                        height: 50%;
+                        border-radius: 40px;
+                        cursor: url(../image/cursor/cursor_mano.png),auto;
+                    }
+                    & span{
+                        font-size: 1.5rem;
+                        color: $color-text;
+                    }
+}
+/*Sidebar - carrito*/
+#sidebar-bkground{
+                    position:fixed;
+                    top:$header-size;
+                    width: 100%;
+                    height: 100%;
+                    background-color: $color-carmin;
+                    opacity: 0.5;
+                    right: -100rem;
+                    transition: all 700ms linear;
+                    cursor: url(../image/cursor/cursor_mano.png),auto;
+                    &.active{
+                        right: 0;
+                    }
+}
+
+
+#sidebar{
+        position:fixed;
+        top: $header-size;
+        width: 25rem;
+        height: 90%;
+        transition: all 500ms linear;
+        overflow:scroll;
+        right: -25rem;
+        background:linear-gradient(90deg,rgba(233, 186, 188,0) 0%,rgba(255, 210, 210,1)1%,rgba(255, 210, 210,1)100%);
+        box-shadow:-10px 0 10px rgba(0,0,0,0.3),
+                    -15px 0 15px rgba(0,0,0,0.1),
+                    inset 5px 0 5px rgba(0,0,0,0.2),
+                    inset 10px 0 10px rgba(0,0,0,0.1);
+        display: flex;
+        flex-wrap: wrap;
+        // flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        & .miCarrito{
+                    top: 0;
+                    height: 20%;
+                    margin-bottom: 2rem;
+                & h5{
+                    font-family: 'fleur de leah', cursive;
+                    text-align: center;
+                    font-size: 2.5rem;
+                    color: $color-text;
+                    margin-top: 2rem;
+                }
+        }
+        & div .precioProducto{
+                                font-family: 'italianno' , cursive;
+                                font-size: 2rem;
+                                color: $color-text;
+                                & #precioTotal{
+                                    font-size: 1.2rem;
+                                }
+        }
+        &.active{
+            right: 0;
+        }
+        .divCarrito{
+                    margin-top: 1rem;
+                    padding-bottom: 1rem;
+                    display: grid;
+                    align-items: center;
+                    border-bottom: 1px dashed $color-text;
+                    min-height: 10rem;
+                    grid-template-areas: "imagen nombre nombre"
+                                        "imagen marca marca"
+                                        "imagen talle cantidad"
+                                        "imagen precio precio"
+                                        "imagen eliminar eliminar";
+                    &__img{
+                        width: 6rem;
+                        height: auto;
+                        grid-area: imagen;
+                    }
+                    &__nombre{
+                        margin-left: 1rem;
+                            color: $color-text;
+                            grid-area: nombre;
+                    }
+                    &__marca{
+                        margin-left: 1rem;
+                            color: $color-text;
+                            font-style: italic;
+                            grid-area: marca;
+                    }
+                    &__talle{
+                        margin-left: 1rem;
+                            color: $color-text;
+                            font-style: italic;
+                            grid-area: talle;
+                    }
+                    &__precio{
+                        margin-left: 1rem;
+                                color: $color-resaltado;
+                                grid-area: precio;
+                    }
+                    &__cantidad{
+                        margin-left: 1rem;
+                                color: $color-text;
+                                grid-area: cantidad;
+                    }
+                    & .botonEliminar{
+                                    margin: 0 auto 2rem auto;
+                                    background-color: $color-carmin;
+                                    color:$color-crema;
+                                    font-style: 'italianno', cursive;
+                                    border: 1px solid rgba(100, 100,100,0.3);
+                                    padding: 4px;
+                                    opacity:0.8;
+                                    grid-area: eliminar;
+                                    cursor: url(../image/cursor/cursor_mano.png),auto;
+                                    &:hover{
+                                        opacity:1;
+                                    }
+                    }
+        }
+        //estilos seleccion de medio de pogo
+        .medioPago{
+                    width: 80%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    h5{
+                        color: $color-text;
+                    }
+                    input[type="radio"]{
+                        display: none;
+                        &:checked + label{
+                            padding: 5px 15px;
+                            background: rgba(209,44,94,0.8) ;
+                            border-radius: 2px;
+                            color: $color-crema;
+                            &::before{
+                                display: none;
+                            }
+                        }
+
+
+                    }
+                    label{
+                        cursor: url(../image/cursor/cursor_mano.png),auto;
+                        font-size: 1rem;
+                        border-radius: 3px;
+                        color: $color-text;
+                        padding: 5px 15px 5px 51px;
+                        display: inline-block;
+                        position: relative;
+                        transition: all 0.3s ease;
+                        &:hover{
+                                background-color: rgba(209,44,94,0.2);
+                        }
+                        &:before{
+                            content: "";
+                            height: 17px;
+                            width: 17px;
+                            display: inline-block;
+                            background:none;
+                            border:3px solid $color-text;
+                            border-radius: 50%;
+                            position: absolute;
+                            left: 17px;
+                            top:10px ;
+                        }
+                    }
+
+        }
+
+        //Estilos botones CONFIRMAR y CERRAR
+        .botoneraSidebar{
+                        display: flex;
+                        justify-content: space-between;
+                        padding-bottom: 2rem;
+                        & #btn-cerrar{
+                                    margin-right: 1rem;
+                                    width: 7.5rem;
+                                    height: 4rem;
+                                    padding: 0.5rem;
+                                    font-family: 'italianno', cursive;
+                                    font-size: 1.6rem;
+                                    letter-spacing: 2px;
+                                    font-weight: 500;
+                                    text-shadow: 1px 1px 1px rgba(0,0,0,0.7),
+                                                -1px -1px 1px rgba(0,0,0,0.2);
+                                    border-radius: 40px;
+                                    background-color: $color-carmin;
+                                    color: $color-crema;
+                                    cursor: url(../image/cursor/cursor_mano.png),auto;
+                        }
+                        & #btn-confirm{
+                                    width: 7.5rem;
+                                    height: 4rem;
+                                    padding: 0.5rem;
+                                    font-family: 'italianno', cursive;
+                                    font-size: 1.7rem;
+                                    letter-spacing: 1px;
+                                    font-weight: 500;
+                                    text-shadow: 1px 1px 1px rgba(0,0,0,0.7),
+                                                -1px -1px 1px rgba(0,0,0,0.2);
+                                    border-radius: 40px;
+                                    background-color: $color-confirmacion;
+                                    color: $color-crema;
+                                    cursor: url(../image/cursor/cursor_mano.png),auto;
+                                    & span{
+                                        font-family: 'fleur de leah', cursive;
+                                    }
+                        }
+        }
+}
+
+
