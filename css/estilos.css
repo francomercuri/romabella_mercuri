@@ -319,108 +319,6 @@
       #sidebar .botoneraSidebar #btn-confirm span {
         font-family: 'fleur de leah', cursive; }
 
-/*__________________________ESTILOS DELANTEROS TARJETA___________________________*/
-.tj-anverso {
-  width: 100%;
-  background: url(../image/tarjeta/fondo_tjpg);
-  background-size: cover; }
-  .tj-anverso .tj-logo {
-    text-align: right;
-    min-height: 50px; }
-    .tj-anverso .tj-logo img {
-      height: 100%;
-      width: 100%;
-      object-fit: cover;
-      max-width: 80px; }
-  .tj-anverso .tj-chip {
-    max-height: 60px;
-    width: 100%;
-    max-width: 80px;
-    margin-bottom: 20px; }
-  .tj-anverso .grupo .tj-label {
-    font-family: 'Courier Prime', monospace;
-    font-size: 1.1rem;
-    color: goldenrod;
-    text-shadow: 2px 1px 0 rgba(50, 50, 50, 0.9), -1px -2px 0 rgba(50, 50, 50, 0.9);
-    margin-bottom: 5px;
-    font-weight: 500; }
-  .tj-anverso .grupo .tj-numero {
-    font-family: 'Courier Prime', monospace;
-    color: #fff;
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
-    font-size: 1.4rem;
-    text-transform: uppercase; }
-  .tj-anverso .grupo .tj-nombre {
-    font-family: 'Courier Prime', monospace;
-    color: #fff;
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
-    font-size: 1.4rem;
-    text-transform: uppercase; }
-  .tj-anverso .grupo .tj-vencimiento {
-    font-family: 'Courier Prime', monospace;
-    color: #fff;
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
-    font-size: 1.4rem;
-    text-transform: uppercase; }
-    .tj-anverso .grupo .tj-vencimiento span {
-      font-family: 'Courier Prime', monospace; }
-  .tj-anverso .flexbox {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px; }
-
-/*_____________________________ESTILOS TRASEROS TARJETA DE CREDITO______________________*/
-.tj-reverso {
-  background: url(../image/tarjeta/fondo_tjpg);
-  background-size: cover;
-  position: absolute;
-  top: 0;
-  transform: rotateY(180deg);
-  backface-visibility: hidden; }
-  .tj-reverso .barraMagnetica {
-    height: 40px;
-    background: #000;
-    width: 100%;
-    position: absolute;
-    top: 30px;
-    left: 0; }
-  .tj-reverso .tj-datos {
-    margin-top: 60px;
-    display: flex;
-    justify-content: space-between; }
-    .tj-reverso .tj-datos p {
-      margin-bottom: 5px; }
-    .tj-reverso .tj-datos #firma {
-      width: 70%; }
-      .tj-reverso .tj-datos #firma .tj-label {
-        font-family: 'Courier Prime', monospace; }
-      .tj-reverso .tj-datos #firma .tj-firma {
-        height: 40px;
-        background: repeating-linear-gradient(skyblue 0, skyblue 5px, orange 5px, orange 10px); }
-        .tj-reverso .tj-datos #firma .tj-firma p {
-          line-height: 40px;
-          font-family: 'Mr Dafoe', cursive;
-          color: #000;
-          font-size: 1.9rem;
-          padding: 0 10px;
-          text-transform: capitalize; }
-    .tj-reverso .tj-datos #cvv {
-      width: 20%; }
-      .tj-reverso .tj-datos #cvv .cvv {
-        background: #fff;
-        height: 40px;
-        color: #000;
-        padding: 10px;
-        text-align: center; }
-  .tj-reverso .tj-leyenda {
-    font-family: 'Courier Prime', monospace;
-    font-size: 0.9rem;
-    line-height: 24px; }
-  .tj-reverso .link-banco {
-    font-family: 'Courier Prime', monospace;
-    font-size: 0.9rem;
-    color: #fff; }
-
 .static-header {
   position: absolute;
   top: 0;
@@ -432,8 +330,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  /*Contenedor principal TARJETA*/
-  /*CIERRE TARJETA (MODAL)*/ }
+  /*Contenedor principal TARJETA*/ }
   .tj-main .tj-container {
     width: 90%;
     max-width: 1000px;
@@ -441,7 +338,10 @@
     margin: auto;
     display: flex;
     flex-direction: column;
-    align-items: center; }
+    align-items: center;
+    /*FIN ESTILOS TARJETA*/
+    /*Boton desplegar formulario*/
+    /*FORMULARIO PARA PAGO CON TARJETA*/ }
     .tj-main .tj-container .tarjeta {
       width: 100%;
       max-width: 550px;
@@ -450,10 +350,10 @@
       transition: all 3s ease;
       transform: rotateY(0deg);
       transform-style: preserve-3d;
-      backface-visibility: hidden;
       cursor: url(../image/cursor/cursor_mano.png), auto;
       z-index: 2;
-      /*Boton desplegar formulario*/ }
+      /*__________________________ESTILOS DELANTEROS TARJETA___________________________*/
+      /*_____________________________ESTILOS TRASEROS TARJETA DE CREDITO______________________*/ }
       .tj-main .tj-container .tarjeta.tj-active {
         transform: rotateY(180deg); }
       .tj-main .tj-container .tarjeta > div {
@@ -464,151 +364,253 @@
         flex-direction: column;
         justify-content: space-between;
         box-shadow: 0 10px 10px 0 rgba(90, 116, 148, 0.3); }
-      .tj-main .tj-container .tarjeta .contenedor-btn .btn-abrir-form {
-        width: 50px;
-        height: 50px;
-        background: #e2376a;
-        position: relative;
-        top: -25px;
-        z-index: 3;
-        border-radius: 100%;
-        box-shadow: -5px 4px 8px rgba(90, 116, 148, 0.4);
-        padding: 5px;
-        transition: all 0.2s ease;
-        border: none;
-        cursor: url(../image/cursor/cursor_mano.png), auto; }
-        .tj-main .tj-container .tarjeta .contenedor-btn .btn-abrir-form img {
-          cursor: url(../image/cursor/cursor_mano.png), auto; }
-        .tj-main .tj-container .tarjeta .contenedor-btn .btn-abrir-form:hover {
-          background: #d12c5e; }
-        .tj-main .tj-container .tarjeta .contenedor-btn .btn-abrir-form.btn-active {
-          transform: rotate(45deg); }
-  .tj-main .formulario-tarjeta {
-    background: #ffffbf;
-    width: 100%;
-    max-width: 700px;
-    padding: 150px 30px 30px 30px;
-    border-radius: 10px;
-    position: relative;
-    top: -150px;
-    z-index: 1;
-    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-    transition: clip-path 0.3s ease-out; }
-    .tj-main .formulario-tarjeta.form-active {
-      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
-    .tj-main .formulario-tarjeta label {
-      display: block;
-      color: #d12c5e;
-      margin-bottom: 5px;
-      font-size: 1.2rem; }
-    .tj-main .formulario-tarjeta input {
-      margin-bottom: 20px;
-      text-transform: uppercase; }
-    .tj-main .formulario-tarjeta select {
-      appearance: none; }
-    .tj-main .formulario-tarjeta input, .tj-main .formulario-tarjeta select, .tj-main .formulario-tarjeta .btn-enviar {
-      border: 2px solid #fff0f0;
-      font-size: 1.1rem;
-      height: 50px;
-      width: 100%;
-      padding: 5px 12px;
-      transition: 0.3 ease;
-      border-radius: 5px; }
-    .tj-main .formulario-tarjeta input:hover, .tj-main .formulario-tarjeta select:hover {
-      border: 2px solid #e2376a; }
-    .tj-main .formulario-tarjeta input:focus, .tj-main .formulario-tarjeta select:focus {
-      outline: #040404;
-      box-shadow: 1px 7px 10px -5px rgba(90, 116, 148, 0.3); }
-    .tj-main .formulario-tarjeta .flexbox {
-      display: flex;
-      justify-content: space-between; }
-    .tj-main .formulario-tarjeta .vencimiento-form {
-      width: 100%; }
-    .tj-main .formulario-tarjeta .cvv {
-      min-width: 100px; }
-    .tj-main .formulario-tarjeta .grupo-select {
-      width: 100%;
-      margin-right: 15px;
-      position: relative; }
-      .tj-main .formulario-tarjeta .grupo-select img {
+      .tj-main .tj-container .tarjeta .tj-anverso {
+        width: 100%;
+        background: url(../image/tarjeta/fondo_tc.jpg);
+        background-size: cover;
+        backface-visibility: hidden; }
+        .tj-main .tj-container .tarjeta .tj-anverso .tj-logo {
+          text-align: right;
+          min-height: 50px; }
+          .tj-main .tj-container .tarjeta .tj-anverso .tj-logo img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            max-width: 80px; }
+        .tj-main .tj-container .tarjeta .tj-anverso .tj-chip {
+          max-height: 60px;
+          width: 100%;
+          max-width: 80px;
+          margin-bottom: 20px; }
+        .tj-main .tj-container .tarjeta .tj-anverso .grupo .tj-label {
+          font-family: 'Courier Prime', monospace;
+          font-size: 1.1rem;
+          color: goldenrod;
+          text-shadow: 2px 1px 0 rgba(50, 50, 50, 0.9), -1px -2px 0 rgba(50, 50, 50, 0.9);
+          margin-bottom: 5px;
+          font-weight: 500; }
+        .tj-main .tj-container .tarjeta .tj-anverso .grupo .tj-numero {
+          font-family: 'Courier Prime', monospace;
+          color: #fff;
+          text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+          font-size: 1.4rem;
+          text-transform: uppercase; }
+        .tj-main .tj-container .tarjeta .tj-anverso .grupo .tj-nombre {
+          font-family: 'Courier Prime', monospace;
+          color: #fff;
+          text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+          font-size: 1.4rem;
+          text-transform: uppercase; }
+        .tj-main .tj-container .tarjeta .tj-anverso .grupo .tj-vencimiento {
+          font-family: 'Courier Prime', monospace;
+          color: #fff;
+          text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+          font-size: 1.4rem;
+          text-transform: uppercase; }
+          .tj-main .tj-container .tarjeta .tj-anverso .grupo .tj-vencimiento span {
+            font-family: 'Courier Prime', monospace; }
+        .tj-main .tj-container .tarjeta .tj-anverso .flexbox {
+          display: flex;
+          justify-content: space-between;
+          margin-top: 20px; }
+      .tj-main .tj-container .tarjeta .tj-reverso {
+        background: url(../image/tarjeta/fondo_tc.jpg);
+        background-size: cover;
         position: absolute;
-        top: 18px;
-        right: 15px;
-        transition: all 3s ease; }
-    .tj-main .formulario-tarjeta .btn-enviar {
+        top: 0;
+        transform: rotateY(180deg);
+        backface-visibility: hidden; }
+        .tj-main .tj-container .tarjeta .tj-reverso .barraMagnetica {
+          height: 40px;
+          background: #000;
+          width: 100%;
+          position: absolute;
+          top: 30px;
+          left: 0; }
+        .tj-main .tj-container .tarjeta .tj-reverso .tj-datos {
+          margin-top: 60px;
+          display: flex;
+          justify-content: space-between; }
+          .tj-main .tj-container .tarjeta .tj-reverso .tj-datos p {
+            margin-bottom: 5px; }
+          .tj-main .tj-container .tarjeta .tj-reverso .tj-datos #firma {
+            width: 70%; }
+            .tj-main .tj-container .tarjeta .tj-reverso .tj-datos #firma .tj-label {
+              font-family: 'Courier Prime', monospace; }
+            .tj-main .tj-container .tarjeta .tj-reverso .tj-datos #firma .tj-firma {
+              height: 40px;
+              background: repeating-linear-gradient(skyblue 0, skyblue 5px, orange 5px, orange 10px); }
+              .tj-main .tj-container .tarjeta .tj-reverso .tj-datos #firma .tj-firma p {
+                line-height: 40px;
+                font-family: 'Mr Dafoe', cursive;
+                color: #000;
+                font-size: 1.9rem;
+                padding: 0 10px;
+                text-transform: capitalize; }
+          .tj-main .tj-container .tarjeta .tj-reverso .tj-datos #cvv {
+            width: 20%; }
+            .tj-main .tj-container .tarjeta .tj-reverso .tj-datos #cvv .cvv {
+              background: #fff;
+              height: 40px;
+              color: #000;
+              padding: 10px;
+              text-align: center; }
+        .tj-main .tj-container .tarjeta .tj-reverso .tj-leyenda {
+          font-family: 'Courier Prime', monospace;
+          font-size: 0.9rem;
+          line-height: 24px; }
+        .tj-main .tj-container .tarjeta .tj-reverso .link-banco {
+          font-family: 'Courier Prime', monospace;
+          font-size: 0.9rem;
+          color: #fff; }
+    .tj-main .tj-container .contenedor-btn .btn-abrir-form {
+      width: 50px;
+      height: 50px;
+      background: #e2376a;
+      position: relative;
+      top: -25px;
+      z-index: 3;
+      border-radius: 100%;
+      box-shadow: -5px 4px 8px rgba(90, 116, 148, 0.4);
+      padding: 5px;
+      transition: all 0.2s ease;
       border: none;
-      padding: 10px;
-      font-size: 1rem;
-      color: #fff;
-      background: #9ec024;
-      box-shadow: 2px 2px 10px 0 rgba(145, 165, 35, 0.4);
       cursor: url(../image/cursor/cursor_mano.png), auto; }
-      .tj-main .formulario-tarjeta .btn-enviar:hover {
-        background: #91a523; }
-  .tj-main .footer-tarjeta {
-    position: absolute;
-    bottom: -500px;
-    width: 100%; }
-  .tj-main #tj-modal {
-    width: 100%;
-    max-width: 800px;
-    height: auto;
-    min-height: 400px;
-    margin: 0 auto;
-    background: rgba(209, 44, 94, 0.3);
-    border: 2px solid #d12c5e;
-    position: relative;
-    top: 150px;
-    z-index: 4;
-    transform-style: preserve-3d;
-    transform: rotateY(180deg);
-    backface-visibility: hidden;
-    transition: all 3s ease; }
-    .tj-main #tj-modal.active {
-      transform: rotateY(0); }
-    .tj-main #tj-modal .tj-cierre {
-      background: rgba(255, 240, 240, 0.9);
-      margin: 5% auto 0 auto;
-      width: 80%;
-      min-width: 400px;
-      height: 100%;
-      min-height: 300px;
-      box-shadow: inset 1px 1px 1px 1px rgba(255, 240, 240, 0.8), 1px 1px 1px 1px rgba(255, 240, 240, 0.7), 3px 3px 3px 3px rgba(255, 240, 240, 0.5), 5px 5px 5px 5px rgba(255, 240, 240, 0.3), inset -1px -1px 1px 1px rgba(255, 240, 240, 0.8), -1px -1px 1px 1px rgba(255, 240, 240, 0.7), -3px -3px 3px 3px rgba(255, 240, 240, 0.5), -5px -5px 5px 5px rgba(255, 240, 240, 0.3);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: space-between; }
-      .tj-main #tj-modal .tj-cierre .tj-modal-title {
+      .tj-main .tj-container .contenedor-btn .btn-abrir-form img {
+        cursor: url(../image/cursor/cursor_mano.png), auto; }
+      .tj-main .tj-container .contenedor-btn .btn-abrir-form:hover {
+        background: #d12c5e; }
+      .tj-main .tj-container .contenedor-btn .btn-abrir-form.btn-active {
+        transform: rotate(45deg); }
+    .tj-main .tj-container .formulario-tarjeta {
+      background: #ffffbf;
+      width: 100%;
+      max-width: 700px;
+      padding: 150px 30px 30px 30px;
+      border-radius: 10px;
+      position: relative;
+      top: -150px;
+      z-index: 1;
+      clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+      transition: clip-path 0.3s ease-out; }
+      .tj-main .tj-container .formulario-tarjeta.form-active {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
+      .tj-main .tj-container .formulario-tarjeta label {
         display: block;
-        text-align: center;
-        font-size: 3.5rem;
-        font-family: 'fleur de leah', cursive;
-        color: #d12c5e; }
-      .tj-main #tj-modal .tj-cierre #orderNumber {
+        color: #d12c5e;
+        margin-bottom: 5px;
+        font-size: 1.2rem; }
+      .tj-main .tj-container .formulario-tarjeta input {
+        margin-bottom: 20px;
+        text-transform: uppercase; }
+      .tj-main .tj-container .formulario-tarjeta select {
+        appearance: none; }
+      .tj-main .tj-container .formulario-tarjeta input, .tj-main .tj-container .formulario-tarjeta select, .tj-main .tj-container .formulario-tarjeta .btn-enviar {
+        border: 2px solid #fff0f0;
+        font-size: 1.1rem;
+        height: 50px;
+        width: 100%;
+        padding: 5px 12px;
+        transition: 0.3 ease;
+        border-radius: 5px; }
+      .tj-main .tj-container .formulario-tarjeta input:hover, .tj-main .tj-container .formulario-tarjeta select:hover {
+        border: 2px solid #e2376a; }
+      .tj-main .tj-container .formulario-tarjeta input:focus, .tj-main .tj-container .formulario-tarjeta select:focus {
+        outline: #040404;
+        box-shadow: 1px 7px 10px -5px rgba(90, 116, 148, 0.3); }
+      .tj-main .tj-container .formulario-tarjeta .flexbox {
+        display: flex;
+        justify-content: space-between; }
+      .tj-main .tj-container .formulario-tarjeta .vencimiento-form {
         width: 100%; }
-        .tj-main #tj-modal .tj-cierre #orderNumber .codigoCompra {
-          width: 90%;
-          margin: 0 auto;
-          position: relative;
-          text-align: right; }
-          .tj-main #tj-modal .tj-cierre #orderNumber .codigoCompra p {
-            font-size: 2rem;
-            color: #d12c5e; }
-            .tj-main #tj-modal .tj-cierre #orderNumber .codigoCompra p span {
-              color: #e2376a; }
-      .tj-main #tj-modal .tj-cierre .tj-cierre-btn {
-        justify-self: flex-end;
-        align-self: center;
+      .tj-main .tj-container .formulario-tarjeta .cvv {
+        min-width: 100px; }
+      .tj-main .tj-container .formulario-tarjeta .grupo-select {
+        width: 100%;
+        margin-right: 15px;
+        position: relative; }
+        .tj-main .tj-container .formulario-tarjeta .grupo-select img {
+          position: absolute;
+          top: 18px;
+          right: 15px;
+          transition: all 3s ease; }
+      .tj-main .tj-container .formulario-tarjeta .btn-enviar {
         border: none;
         padding: 10px;
         font-size: 1rem;
         color: #fff;
-        border-radius: 20px;
         background: #9ec024;
         box-shadow: 2px 2px 10px 0 rgba(145, 165, 35, 0.4);
         cursor: url(../image/cursor/cursor_mano.png), auto; }
-        .tj-main #tj-modal .tj-cierre .tj-cierre-btn:hover {
+        .tj-main .tj-container .formulario-tarjeta .btn-enviar:hover {
           background: #91a523; }
+
+/*CIERRE TARJETA (MODAL)*/
+#tj-modal {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  min-height: 400px;
+  margin: 0 auto;
+  background: rgba(209, 44, 94, 0.3);
+  border: 2px solid #d12c5e;
+  position: relative;
+  top: 150px;
+  z-index: 4;
+  transform-style: preserve-3d;
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
+  transition: all 3s ease; }
+  #tj-modal.active {
+    transform: rotateY(0); }
+  #tj-modal .tj-cierre {
+    background: rgba(255, 240, 240, 0.9);
+    margin: 5% auto 0 auto;
+    width: 80%;
+    min-width: 400px;
+    height: 100%;
+    min-height: 300px;
+    box-shadow: inset 1px 1px 1px 1px rgba(255, 240, 240, 0.8), 1px 1px 1px 1px rgba(255, 240, 240, 0.7), 3px 3px 3px 3px rgba(255, 240, 240, 0.5), 5px 5px 5px 5px rgba(255, 240, 240, 0.3), inset -1px -1px 1px 1px rgba(255, 240, 240, 0.8), -1px -1px 1px 1px rgba(255, 240, 240, 0.7), -3px -3px 3px 3px rgba(255, 240, 240, 0.5), -5px -5px 5px 5px rgba(255, 240, 240, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between; }
+    #tj-modal .tj-cierre .tj-modal-title {
+      display: block;
+      text-align: center;
+      font-size: 3.5rem;
+      font-family: 'fleur de leah', cursive;
+      color: #d12c5e; }
+    #tj-modal .tj-cierre #orderNumber {
+      width: 100%; }
+      #tj-modal .tj-cierre #orderNumber .codigoCompra {
+        width: 90%;
+        margin: 0 auto;
+        position: relative;
+        text-align: right; }
+        #tj-modal .tj-cierre #orderNumber .codigoCompra p {
+          font-size: 2rem;
+          color: #d12c5e; }
+          #tj-modal .tj-cierre #orderNumber .codigoCompra p span {
+            color: #e2376a; }
+    #tj-modal .tj-cierre .tj-cierre-btn {
+      justify-self: flex-end;
+      align-self: center;
+      border: none;
+      padding: 10px;
+      font-size: 1rem;
+      color: #fff;
+      border-radius: 20px;
+      background: #9ec024;
+      box-shadow: 2px 2px 10px 0 rgba(145, 165, 35, 0.4);
+      cursor: url(../image/cursor/cursor_mano.png), auto; }
+      #tj-modal .tj-cierre .tj-cierre-btn:hover {
+        background: #91a523; }
+
+.footer-tarjeta {
+  position: absolute;
+  bottom: -500px;
+  width: 100%; }
 
 * {
   margin: 0;

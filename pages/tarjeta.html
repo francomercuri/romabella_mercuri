@@ -14,7 +14,6 @@
     <!-- CSS propio -->
     <link rel="stylesheet" href="../css/estilos.css">
 </head>
-</head>
 <body>
     <header class="static-header">
         <div>
@@ -26,7 +25,7 @@
         <nav>
             <ul>
                 <li>
-                    <a href="../index.html/#saludo">
+                    <a href="../index.html#saludo">
                     Nosotros
                     </a>
                 </li>
@@ -36,13 +35,8 @@
                     </a>
                 </li>
                 <li>
-                    <a href="contacto.html">
+                    <a href="../index.html#redes">
                     Contacto
-                    </a>
-                </li>
-                <li>
-                    <a href="compras.html">
-                        <img src="" alt="Ver Carrito">
                     </a>
                 </li>
             </ul>
@@ -103,10 +97,15 @@
                     <p class="cvv"></p>
                 </div>
             </div>
+            <div id="leyenda-container">
             <p class="tj-leyenda">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum libero corporis unde voluptate quos. Vel quae reprehenderit iure est cupiditate voluptatem facilis quo, aspernatur culpa numqu
+                En caso de advertir un inconveniente con su tarjeta contáctese con su banco.<br>
+                In case of a problem with your card, please contact your bank.
             </p>
+            </div>
+           <div id="enlace-banco-container">
             <a href="#" class="link-banco">http://banco.com</a>
+        </div>
         </div>
     </div>
     <!-- Fin Tarjeta -->
@@ -149,7 +148,7 @@
                 <input type="text" id="inputCVV" maxlength="3">
             </div>
         </div>
-        <button type="button" class="btn-enviar">Confirmar Compra</button>
+        <button type="button" class="btn-enviar" id="btn-enviar">Confirmar Compra</button>
     </form>
 </div>
 </main>

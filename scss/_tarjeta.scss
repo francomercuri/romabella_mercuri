@@ -1,5 +1,4 @@
-@import 'tarjeta-frente';
-@import 'tarjeta-dorso';
+
 
 //________________________________FORM PAGO CON TARJETA______________________________________
 
@@ -34,7 +33,6 @@
                                 transition: all 3s ease;
                                 transform: rotateY(0deg);
                                 transform-style: preserve-3d;
-                                backface-visibility: hidden;
                                 cursor:url(../image/cursor/cursor_mano.png),auto;
                                 z-index: 2;
                                 &.tj-active{
@@ -49,37 +47,168 @@
                                     justify-content: space-between;
                                     box-shadow: 0 10px 10px 0 rgba(90,116,148,0.3);
                                 }
+            /*__________________________ESTILOS DELANTEROS TARJETA___________________________*/
+& .tj-anverso{
+    width: 100%;
+    background: url(../image/tarjeta/fondo_tc.jpg);
+    background-size: cover;
+    backface-visibility: hidden;
+     & .tj-logo{
+        text-align: right;
+        min-height: 50px;
+         & img{
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            max-width: 80px;
+        }
+    }
+     & .tj-chip{
+         max-height: 60px;
+        width: 100%;
+        max-width: 80px;
+        margin-bottom: 20px;
+    }
+    & .grupo{
+        & .tj-label{
+            font-family: 'Courier Prime', monospace;
+            font-size: 1.1rem;
+            color: goldenrod;
+            text-shadow: 2px 1px 0 rgba(50, 50, 50,0.9),
+                        -1px -2px 0 rgba(50, 50, 50,0.9);
+            margin-bottom: 5px;
+            font-weight: 500;
 
+        }
+        & .tj-numero{
+                    font-family: 'Courier Prime', monospace;
+                    color: #fff;
+                    text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+                    font-size: 1.4rem;
+                    text-transform: uppercase;
+        }
+        & .tj-nombre{
+                    font-family: 'Courier Prime', monospace;
+                    color: #fff;
+                    text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+                    font-size: 1.4rem;
+                    text-transform: uppercase;
+        }
+        & .tj-vencimiento{
+                        font-family: 'Courier Prime', monospace;
+                        color: #fff;
+                        text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+                        font-size: 1.4rem;
+                        text-transform: uppercase;
+                        & span {
+                            font-family: 'Courier Prime', monospace;
+                        }
 
-            /*Boton desplegar formulario*/
-            & .contenedor-btn{
-                & .btn-abrir-form{
-                    width: 50px;
-                    height: 50px;
-                    background: $color-resaltado;
-                    position: relative;
-                    top: -25px;
-                    z-index: 3;
-                    border-radius: 100%;
-                    box-shadow: -5px 4px 8px rgba(90,116,148,0.4);
-                    padding: 5px;
-                    transition: all 0.2s ease;
-                    border: none;
-                    cursor: url(../image/cursor/cursor_mano.png), auto;
-                    & img{
-                        cursor: url(../image/cursor/cursor_mano.png),auto;
-                    }
-                    &:hover{
-                        background: $color-text;
-                    }
-                    &.btn-active{
-                        transform: rotate(45deg);
+        }
+    }
+    & .flexbox{
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+    }
+}
+/*_____________________________ESTILOS TRASEROS TARJETA DE CREDITO______________________*/
+& .tj-reverso{
+    background:url(../image/tarjeta/fondo_tc.jpg);
+    background-size: cover;
+    position: absolute;
+    top:0;
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+    & .barraMagnetica{
+        height: 40px;
+        background: #000;
+        width: 100%;
+        position: absolute;
+        top: 30px;
+        left: 0;
+    }
+    & .tj-datos{
+        margin-top: 60px;
+        display: flex;
+        justify-content: space-between;
+        & p{
+            margin-bottom:5px ;
+        }
+        & #firma{
+                width: 70%;
+                & .tj-label{
+                    font-family: 'Courier Prime', monospace;
+                }
+                & .tj-firma{
+                    height: 40px;
+                    background: repeating-linear-gradient(skyblue 0, skyblue 5px, orange 5px, orange 10px);
+                    & p{
+                        line-height: 40px;
+                        font-family: 'Mr Dafoe', cursive;
+                        color:#000;
+                        font-size: 1.9rem;
+                        padding: 0 10px;
+                        text-transform: capitalize;
                     }
                 }
+        }
+        & #cvv{
+            width: 20%;
+            & .cvv{
+                background: #fff;
+                height: 40px;
+                color: #000;
+                padding: 10px;
+                text-align: center;
             }
         }
+    }
+    & .tj-leyenda{
+                font-family: 'Courier Prime', monospace;
+                font-size: 0.9rem;
+                line-height: 24px;
+    }
+    & .link-banco{
+        font-family: 'Courier Prime', monospace;
+        font-size: 0.9rem;
+        color: #fff;
+    }
 }
-.formulario-tarjeta{
+
+
+
+        }/*FIN ESTILOS TARJETA*/
+
+                    /*Boton desplegar formulario*/
+& .contenedor-btn{
+    & .btn-abrir-form{
+        width: 50px;
+        height: 50px;
+        background: $color-resaltado;
+        position: relative;
+        top: -25px;
+        z-index: 3;
+        border-radius: 100%;
+        box-shadow: -5px 4px 8px rgba(90,116,148,0.4);
+        padding: 5px;
+        transition: all 0.2s ease;
+        border: none;
+        cursor: url(../image/cursor/cursor_mano.png), auto;
+        & img{
+            cursor: url(../image/cursor/cursor_mano.png),auto;
+        }
+        &:hover{
+            background: $color-text;
+        }
+        &.btn-active{
+            transform: rotate(45deg);
+        }
+    }
+}
+
+/*FORMULARIO PARA PAGO CON TARJETA*/
+& .formulario-tarjeta{
     background: $color-crema;
     width: 100%;
     max-width: 700px;
@@ -158,10 +287,10 @@
 
     }
 }
-.footer-tarjeta{
-    position: absolute;
-    bottom: -500px;
-    width: 100%;
+}
+
+
+
 }
 
 /*CIERRE TARJETA (MODAL)*/
@@ -180,7 +309,6 @@
     transform:rotateY(180deg);
     backface-visibility: hidden;
     transition: all 3s ease;
-
     &.active{
         transform: rotateY(0);
     }
@@ -245,4 +373,8 @@
     }
 }
 }
+.footer-tarjeta{
+    position: absolute;
+    bottom: -500px;
+    width: 100%;
 }

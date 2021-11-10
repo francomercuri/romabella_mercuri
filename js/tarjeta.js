@@ -11,12 +11,17 @@ const cvv = document.querySelector('#tarjeta .cvv');
 const btnConfirm = document.querySelector('#btn-confirm'),
     pagoEfectivo = document.querySelector('#efectivo'),
     pagoCredito = document.querySelector('#credito');
+const contenedorEnlance = document.querySelector('#enlace-banco-container')
+let enlaceMAsterCard = "https://www.mastercard.com.ar/es-ar.html";
+let enlaceVisa = "https://www.visa.com.ar/contactar-a-visa.html";
+const contenedorLeyenda = document.querySelector('#leyenda-container');
 //variables para cierre Tarjeta
 const tjConfirm = document.querySelector('#formulario-tarjeta .btn-enviar');
 const orderNumber = document.querySelector('#orderNumber');
 const modalTarjeta = document.querySelector('#tj-modal')
 const btnAceptarTj = document.querySelector('.tj-cierre-btn');
 let aleatorio = Math.round(Math.random()*1000000);
+
 
 
 // -----------------FUNCION PARA MOSTRAR EL FRENTE DE LA TARJETA
@@ -82,11 +87,29 @@ formulario.inputNumero.addEventListener('keyup',(e) =>{
         const imagen = document.createElement('img');
         imagen.src = '../image/tarjeta/visa.png';
         logoTarjeta.appendChild(imagen);
+        //cambiar enlace trasero
+        contenedorEnlance.innerHTML = '';
+        contenedorEnlance.innerHTML = `<a href=${enlaceVisa} target="new" class="link-banco">https://visa.com.ar</a>`;
+        //cambiar leyenda
+        contenedorLeyenda.innerHTML = '';
+        contenedorLeyenda.innerHTML = `<p class="tj-leyenda">
+        En caso de advertir un inconveniente con su tarjeta contáctese con su banco. O con Visa <br>
+        In case you have a problem with your card, please contact your bank. Or contact Visa.<br>
+        En Argentina, para C.A.B.A. (011) 4379-3400, para el Interior del país: 0810-666-3368.</p>`;
     }else if(valorInput[0] == 5){
         logoTarjeta.innerHTML = '';
         const imagen = document.createElement('img');
         imagen.src = '../image/tarjeta/mastercard.png';
         logoTarjeta.appendChild(imagen);
+        //cambiar enlace trasero
+        contenedorEnlance.innerHTML = '';
+        contenedorEnlance.innerHTML = `<a href=${enlaceMAsterCard} target="new" class="link-banco">https://mastercard.com.ar</a>`;
+        //cambiar leyenda
+        contenedorLeyenda.innerHTML = '';
+        contenedorLeyenda.innerHTML = `<p class="tj-leyenda">
+        En caso de advertir un inconveniente con su tarjeta contáctese con su banco. O con Mastercard <br>
+        In case you have a problem with your card, please contact your bank. Or contact mastercard.<br>
+        En Argentina, para C.A.B.A. y Gran Buenos Aires (011) 4340-5700, para el Interior: 0810-999-5700.</p>`;
     }
     //Mostrar el frente de la tarjeta al usuario
     mostrarFrente();
