@@ -1,6 +1,6 @@
 
 let destacados = []
-const sectionDestacados = document.querySelector('#destacados');
+const sectionDestacados = document.querySelector('#contenedor-destacados');
 const carritoIndex = document.querySelector('#carrito-index');
 
 
@@ -13,18 +13,17 @@ $.getJSON('../productos.json',(data) => {
     mostrarDestacados(destacados);
 })
 
-console.log(destacados);
 function mostrarDestacados(array){
     array.forEach(producto => {
         let divD = document.createElement('div');//creo el div contenedor
 
         divD.classList.add('contenedorDestacados');//le asigno una clase
         //Creo las cards y su contenido
-        divD.innerHTML += `<div class = "catalogo" id="catalogo${producto.id}">
-                             <img src= "${producto.img}" alt="${producto.nombre}, ${producto.marca}" class ="catalogo__foto">
-                             <h4 class = "catalogo__nombre"> ${producto.nombre}  </h4>
-                             <p class = "catalogo__marca"> ${producto.marca}</p>
-                             <p class = "catalogo__precio"> $${producto.precio} </p>
+        divD.innerHTML += `<div class = "destacado" id="catalogo${producto.id}">
+                             <img src= "${producto.img}" alt="${producto.nombre}, ${producto.marca}" class ="destacado__foto">
+                             <h4 class = "destacado--nombre"> ${producto.nombre}  </h4>
+                             <p class = "destacado--marca"> ${producto.marca}</p>
+                             <p class = "destacado__precio"> $${producto.precio} </p>
                              <a href="pages/productos.html">Ver catálogo completo</a>
                              </div>`;
 

@@ -1,0 +1,355 @@
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen
+and (min-device-width : 320px) and (max-device-width : 480px) {
+  /* Styles */
+
+ /*_______________________________________HEADER________________________________________*/
+header{
+    position: fixed;
+    top:0;
+    left: 0;
+    padding-top: 0.2rem;
+    z-index: 1;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+& a{
+
+    & img{
+        height: 100%;
+        cursor: pointer;
+    }
+}
+/*_____________________________BOTONERA HEADER_________________________*/
+& ul{
+    display: flex;
+    margin-bottom: 0;
+    & li{
+        display: block;
+        height: 100%;
+        list-style-type: none;
+        letter-spacing: 0.15rem;
+        margin-right: 1rem;
+        padding: 7px 10px;
+        border-radius: 20px;
+        &:hover{
+            transform: none;
+        }
+        & input{
+                border: none;
+                background-color: $fondo-header;
+                color: $color-text;
+        }
+        &:hover{
+            background-color: $color-resaltado;
+        }
+
+        & a{
+            display: block;
+            text-decoration: none;
+            color: $color-text;
+            &:hover{
+                color: $color-crema;
+            }
+            & img{
+                height: 80%;
+                border-radius: 50px;
+            }
+        }
+    }
+    & .carrito-btn{
+                    display: flex;
+                    justify-content: center;
+                    padding: 3px 6px;
+        & img{
+            width: 50%;
+            transition: all 500ms ease;
+            cursor: url(../image/cursor/cursor_mano.png),auto;
+            &:hover{
+                transform: scale(1.3);
+            }
+        }
+        & span{
+            display: none;
+        }
+    }
+}
+}
+
+
+/*_______________________________ index main (NOSOTROS)___________________________________*/
+.nosotros{
+        & #tituloCentral{ //contenedor titulo central
+                        width: 90%;
+                        height: auto;
+
+                        display: flex;
+                        flex-wrap: wrap;
+                        align-items:center;
+                        justify-content: center;
+                        & .carousel-personalizado{
+                            transition: ease-in-out;
+                            position: relative;
+                            &__imagen{
+                                        width: 80%;
+                                        height: 80%;
+                            }
+                        }
+                        & .marca-slogan{
+                                        width: 50%;
+                                        display: flex;
+                                        flex-direction: column;
+                                        position: absolute;
+                                        h1{
+                                            font-family: 'Fleur De Leah', cursive;
+                                            font-weight: 400;
+                                            font-size: 1.5rem;
+                                            text-shadow: 1px 1px 1px rgba(209,44,94,0.7);
+                                        }
+                                        h2{
+                                            font-family: 'Fleur De Leah', cursive;
+                                            font-weight: 300;
+                                            font-size: 1.5rem;
+                                            text-shadow: 1px 1px 1px rgba(209,44,94,0.7) ;
+                                            align-self: flex-end;
+                                        }
+        }
+        }
+        & .saludoContainer{//contenedor del texto de bienvenida
+            width: 80%;
+            margin-top: 0.1rem;
+            margin-bottom: 0.1rem;
+            p{
+                font-size: 0.7rem;
+                line-height: 1;
+                font-weight: 400;
+                & .sloganTwo{
+                            font-size: 0.9rem;
+                            font-weight: 400;
+                }
+        }
+        }
+}
+
+
+/*______________________________________________SECCION DESTACADOS index__________________________________*/
+
+.destacados {
+             width: 100%;
+            max-width: 1200px;
+            height: auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: auto;
+            & a{
+                font-weight: 600;
+                margin: auto;
+                display: block;
+                width: 80%;
+                height: auto;
+                padding: 1rem;
+                text-decoration: none;
+            }
+        }
+
+
+.otrosProductos{
+height: 10rem;
+}
+footer{
+display: flex;
+justify-content: space-between;
+& .redes{
+    & ul{
+        display:flex;
+        justify-content:flex-start;
+        & li{
+            margin: 1rem;
+            list-style-type: none;
+            display: block;
+            & a{
+                img{
+                    cursor:pointer;
+                }
+            }
+        }
+    }
+}
+& .legales{
+    margin: 1rem;
+}
+}
+
+
+
+/*__________________ESTILOS CARRITO____________________________________________*/
+
+/*Botón de carrito en el header*/
+.toggle-btn{
+    cursor: pointer;
+                    & img{
+                        width: 50%;
+                        height: 50%;
+                        border-radius: 40px;
+                        cursor: pointer;
+                    }
+                    & span{
+                        font-size: 1.5rem;
+                    }
+}
+/*Sidebar - carrito*/
+#sidebar-bkground{
+                    top:$header-size;
+                    width: 100%;
+                    height: 100%;
+                    opacity: 0.5;
+                    right: -100rem;
+                    cursor: pointer;
+                    &.active{
+                        right: 0;
+                    }
+}
+
+
+#sidebar{
+        position:fixed;
+        top: $header-size;
+        width: 25rem;
+        height: 90%;
+        transition: all 500ms linear;
+        overflow:scroll;
+        right: -25rem;
+        align-items: center;
+        justify-content: space-around;
+        & .miCarrito{
+                    top: 0;
+                    height: 20%;
+                    margin-bottom: 2rem;
+                & h5{
+                    font-size: 1.5rem;
+                    margin-top: 1.5rem;
+                }
+        }
+        & div .precioProducto{
+                                font-size: 2rem;
+                                color: $color-text;
+                                & #precioTotal{
+                                    font-size: 1.2rem;
+                                }
+        }
+        &.active{
+            right: 0;
+        }
+        .divCarrito{
+                    margin-top: 1rem;
+                    padding-bottom: 1rem;
+                    min-height: 10rem;
+                    &__img{
+                        width: 6rem;
+                        height: auto;
+                    }
+                    &__nombre{
+                        margin-left: 1rem;
+                    }
+                    &__marca{
+                        margin-left: 1rem;
+                    }
+                    &__talle{
+                            margin-left: 1rem;
+                    }
+                    &__precio{
+                            margin-left: 1rem;
+                    }
+                    &__cantidad{
+                                margin-left: 1rem;
+                    }
+                    & .botonEliminar{
+                                    margin: 0.7rem auto;
+                                    opacity:0.9;
+                                    cursor: pointer;
+                    }
+        }
+        //estilos seleccion de medio de pogo
+        .medioPago{
+                    width: 80%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    h5{
+                        color: $color-text;
+                    }
+                    input[type="radio"]{
+                        &:checked + label{
+                            padding: 5px 15px;
+                        }
+
+
+                    }
+                    label{
+                        cursor: pointer;
+                        font-size: 1rem;
+                        border-radius: 3px;
+                        padding: 5px 15px 5px 51px;
+                    }
+
+        }
+
+        //Estilos botones CONFIRMAR y CERRAR
+        .botoneraSidebar{
+                        justify-content: space-around;
+                        padding-bottom: 2rem;
+                        & #btn-cerrar{
+                                    margin-right: 1rem;
+                                    width: 7.5rem;
+                                    height: 4rem;
+                                    padding: 0.5rem;
+                                    font-family: 'italianno', cursive;
+                                    font-size: 1.6rem;
+                                    letter-spacing: 2px;
+                                    font-weight: 500;
+                                    text-shadow: 1px 1px 1px rgba(0,0,0,0.7),
+                                                -1px -1px 1px rgba(0,0,0,0.2);
+                                    border-radius: 40px;
+                                    background-color: $color-carmin;
+                                    color: $color-crema;
+                                    cursor: url(../image/cursor/cursor_mano.png),auto;
+                        }
+                        & #btn-confirm{
+                                    width: 7.5rem;
+                                    height: 4rem;
+                                    padding: 0.5rem;
+                                    font-family: 'italianno', cursive;
+                                    font-size: 1.7rem;
+                                    letter-spacing: 1px;
+                                    font-weight: 500;
+                                    text-shadow: 1px 1px 1px rgba(0,0,0,0.7),
+                                                -1px -1px 1px rgba(0,0,0,0.2);
+                                    border-radius: 40px;
+                                    background-color: $color-confirmacion;
+                                    color: $color-crema;
+                                    cursor: url(../image/cursor/cursor_mano.png),auto;
+                                    & span{
+                                        font-family: 'fleur de leah', cursive;
+                                    }
+                        }
+        }
+}
+
+
+
+
+
+
+}
+
+/* Smartphones (landscape) ----------- */
+@media only screen and (min-width : 321px) {
+  /* Styles */
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width : 320px) {
+  /* Styles */
+}
