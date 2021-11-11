@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Romabella, productos</title>
+    <title>Romabella, calzado</title>
     <!-- Google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,8 +25,8 @@
         <nav>
             <ul>
                 <li>
-                    <a href="calzado.html">
-                    Calzado
+                    <a href="../index.html#saludo">
+                    Nosotros
                     </a>
                 </li>
                 <li><!--BÚSQUEDA-->
@@ -37,64 +37,22 @@
                     Contacto
                     </a>
                 </li>
-                <li class="toggle-btn"><!--Boton carrito-->
-                        <img src="../image/carrito.png" alt=""><span id="contadorCarrito">0</span>
+                <li class="carrito-btn" id="carrito-calzado"><!--Boton carrito-->
+                    <img src="../image/carrito.png" alt=""><span id="contadorCarrito">0</span>
                 </li>
             </ul>
         </nav>
     </header>
-    <!-- carrito -->
-<div id="sidebar-bkground">
-</div>
-    <aside id="sidebar">
+   <main id="calzado-main" class="calzado-main">
+        <h2>En Romabella no tenemos calzado...</h2>
+        <p>Pero no te preocupes, queremos que tengas todo lo que necesites asique aquí te dejamos algunos productos de <a href="https://articulo.mercadolibre.com.ar/">Mercadolibre</a>.</p>
+   </main>
+   <section>
+       <div id="productosMELI-container" class="productosMELI-container">
 
-        <div id="contenedorCarrito">
-        <div class="miCarrito">
-            <h5>Mi carrito</h5>
-        </div>
-            <!-- Contenido dinamico -->
+       </div>
 
-        </div>
-        <div>
-            <p class="precioProducto">Precio total: $<span id="precioTotal"></span></p>
-        </div>
-        <div class="medioPago">
-            <h5>Elegir medio de pago</h5>
-            <div>
-                <input type="radio" id="efectivo" name="pago" value="efectivo"
-                       >
-                <label for="efectivo">Efectivo</label>
-              </div>
-              <div>
-                <input type="radio" id="credito" name="pago" value="credito">
-                <label for="credito">Tarjeta de crédito</label>
-              </div>
-        </div>
-        <div class="botoneraSidebar">
-          <button type="button" id="btn-cerrar">Cerrar</button>
-          <button type="button" id="btn-confirm"><span>C</span>onfirmar</button>
-        </div>
-    </aside>
-
-
-    <!-- BREVE PRESENTACION-->
-    <main id="tituloCatalogo">
-
-    </main>
-    <!-- ________________________SECTION DONDE APARECEN LAS CARDS CREADAS POR JS ____________________-->
-    <section id="sectionCatalogo">
-
-    </section>
-    <!--_______________________________Cierre de la venta________________-->
-<div id="carrito-modal">
-    <div class="carrito-cierre">
-        <h3 class="carrito-modal-title">¡Gracias por tu compra!</h3>
-        <div id="orderNumber">
-            <!-- Aquí aparece el número de orden -->
-        </div>
-        <button class="carrito-cierre-btn">Aceptar</button>
-    </div>
-</div>
+   </section>
     <!-- _____________________INICIO FOOTER__________________________ -->
     <footer>
         <!-- Botonera redes -->
@@ -123,9 +81,7 @@
         <!-- jquery -->
          <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
         <!-- Propios -->
-        <script src="../js/productos.js"></script>
-        <script src="../js/carrito.js"></script>
-        <script src="../js/animacion.js"></script>
+        <script src="../js/calzado.js"></script>
         <script src="../js/app.js"></script>
 </body>
 </html>
