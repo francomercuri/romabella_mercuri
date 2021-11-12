@@ -4,7 +4,7 @@ const sectionDestacados = document.querySelector('#contenedor-destacados');
 const carritoIndex = document.querySelector('#carrito-index');
 
 
-$.getJSON('../productos.json',(data) => {
+$.getJSON('productos.json',(data) => {
     data.forEach(el => {
     if (el.destacado == true){
        destacados.push(new Productos(el.id,el.destacado,el.nombre,el.marca,el.material,el.talle,el.precio,el.cantidad,el.img))
