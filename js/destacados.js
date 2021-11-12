@@ -20,7 +20,7 @@ function mostrarDestacados(array){
         divD.classList.add('contenedorDestacados');//le asigno una clase
         //Creo las cards y su contenido
         divD.innerHTML += `<div class = "destacado" id="catalogo${producto.id}">
-                             <img src= "${producto.img}" alt="${producto.nombre}, ${producto.marca}" class ="destacado__foto">
+                             <img src= "${producto.img.slice(2)}" alt="${producto.nombre}, ${producto.marca}" class ="destacado__foto">
                              <h4 class = "destacado--nombre"> ${producto.nombre}  </h4>
                              <p class = "destacado--marca"> ${producto.marca}</p>
                              <p class = "destacado__precio"> $${producto.precio} </p>
