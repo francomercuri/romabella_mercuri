@@ -26,7 +26,6 @@ function mostrarDestacados(array){
                              <p class = "destacado__precio"> $${producto.precio} </p>
                              <a href="pages/productos.html">Ver catálogo completo</a>
                              </div>`;
-
                              sectionDestacados.appendChild(divD);
     });
 }
