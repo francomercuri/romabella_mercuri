@@ -14,6 +14,7 @@ const orderNumber = document.querySelector('#orderNumber');
 const btnConfirm = document.querySelector('#btn-confirm');
 const  pagoEfectivo = document.querySelector('#efectivo');
 const pagoCredito = document.querySelector('#credito');
+const eligeMedio = document.querySelector('#alerta-pago');
 let aleatorio = Math.round(Math.random()*1000000);
 
 
@@ -151,10 +152,12 @@ btnCerrar.addEventListener('click',()=>{
     carritoBkg.classList.remove('active');
 })
 
+
   //CIERRE EN CARRITO DE COMPRAS
   btnConfirm.addEventListener('click', () =>{
     if (pagoEfectivo.checked == true){
         document.getElementById('sidebar').classList.remove('active');
+        eligeMedio.classList.remove('active');
         carritoBkg.classList.remove('active');
         modalCarrito.classList.add('active');
         numeroOrden(orderNumber);
@@ -164,6 +167,6 @@ btnCerrar.addEventListener('click',()=>{
     }else if(pagoCredito.checked == true){
         window.location.href ="tarjeta.html";
     }else{
-        console.log('elige un medio de pago');
+        eligeMedio.classList.add('active');
     }
 })
