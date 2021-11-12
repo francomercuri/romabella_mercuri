@@ -92,6 +92,83 @@
     "precio": 5000,
     "cantidad": 1,
     "img": "../image/fotos_productos/conjunto_rosa.jpg"
+  },
+  {
+    "id": "VR1-5F",
+    "destacado": false,
+    "nombre": "Vestido de Fibrana",
+    "marca": "Romabella",
+    "material": "fibrana",
+    "talle": "",
+    "precio": 6500,
+    "cantidad": 1,
+    "img": "../image/fotos_productos/vestido_fibrana.jpg"
+  },
+  {
+    "id": "MR1-5A",
+    "destacado": false,
+    "nombre": "Musculosa de algodón",
+    "marca": "Romabella",
+    "material": "algodón",
+    "talle": "",
+    "precio": 2000,
+    "cantidad": 1,
+    "img": "../image/fotos_productos/musculosa.jpg"
+  },
+  {
+    "id": "PVRL-XLM",
+    "destacado": false,
+    "nombre": "Polera Morley viscosa",
+    "marca": "Romabella",
+    "material": "lycra",
+    "talle": "",
+    "precio": 3500,
+    "cantidad": 1,
+    "img": "../image/fotos_productos/polera.jpg"
+  },
+  {
+    "id": "RR1-5AP",
+    "destacado": false,
+    "nombre": "Remera algodon-poliester",
+    "marca": "Romabella",
+    "material": "lycra",
+    "talle": "",
+    "precio": 1250,
+    "cantidad": 1,
+    "img": "../image/fotos_productos/remera.jpg"
+  },
+  {
+    "id": "TR1-5P",
+    "destacado": false,
+    "nombre": "Top escote en v con nudo",
+    "marca": "Romabella",
+    "material": "poplin",
+    "talle": "",
+    "precio": 2100,
+    "cantidad": 1,
+    "img": "../image/fotos_productos/top.jpg"
+  },
+  {
+    "id": "VLRL-XLF",
+    "destacado": false,
+    "nombre": "Vestido largo con apertura lateral",
+    "marca": "Romabella",
+    "material": "fibrana",
+    "talle": "",
+    "precio": 5500,
+    "cantidad": 1,
+    "img": "../image/fotos_productos/vestido_largo.jpg"
+  },
+  {
+    "id": "MOR1-5F",
+    "destacado": false,
+    "nombre": "Mono largo oxford",
+    "marca": "Romabella",
+    "material": "fibrana",
+    "talle": "",
+    "precio": 4700,
+    "cantidad": 1,
+    "img": "../image/fotos_productos/mono.jpg"
   }
     ]
 

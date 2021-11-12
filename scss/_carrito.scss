@@ -6,6 +6,9 @@
 .toggle-btn{
     background-color: $fondo-header;
     cursor: url(../image/cursor/cursor_mano.png),auto;
+    display: flex;
+    align-items: center;
+    position: relative;
                     & img{
                         width: 50%;
                         height: 50%;
@@ -226,5 +229,20 @@
                         }
         }
 }
-
-
+//Aviso 'Elige un medio de pago'
+.alerta-pago{
+        color: $color-carmin;
+        font-size: 1.4rem;
+        transform: rotateX(180deg);
+        transition-delay: 100ms;
+        transition: all 600ms ease;
+        transform-style: preserve-3d;
+        margin:  auto;
+        position: relative;
+        z-index: -3;
+        backface-visibility: hidden;
+    &.active{
+        transform:rotateX(0deg);
+        margin: 1.5rem auto;
+    }
+}

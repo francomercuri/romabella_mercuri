@@ -20,7 +20,7 @@ $.get('https://api.mercadolibre.com/sites/MLA/search?category=MLA109027&limit=10
     })
     mostrarMELI(stockMELI);
 });
-
+//Función para mostrar los productos obtenidos de la API de Mercadolibre
 function mostrarMELI(array){
     array.forEach(producto => {
         let divD = document.createElement('div');//creo el div contenedor
@@ -37,7 +37,7 @@ function mostrarMELI(array){
                              contenedorMELI.appendChild(divD);
     });
 }
- //______________________ FILRO calzado.html/header___________________-
+ //______________________ FILRO (barra de búsqueda en el header___________________-
 let busqueda = document.getElementById('busqueda');
 busqueda.onkeyup = () => {//Cuando se presione una tecla
     let prodBuscado = busqueda.value.toUpperCase();//pasar a mayusculas la busqueda
@@ -46,7 +46,7 @@ busqueda.onkeyup = () => {//Cuando se presione una tecla
     mostrarMELI(buscados);
 }
 
-//Boton carrito para ir al catalogo
+//Boton carrito para ir al catálogo
 let carrito = document.querySelector('#carrito-calzado')
 carrito.addEventListener('click',()=>{
     window.location.href = "../pages/productos.html";
