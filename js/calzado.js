@@ -11,7 +11,7 @@ class ProductosMELI{
     }
 };
 
-$.get('https://api.mercadolibre.com/sites/MLA/search?category=MLA109027&limit=10',function(data){
+$.get('https://api.mercadolibre.com/sites/MLA/search?category=MLA109027&limit=20',function(data){
     data.results.forEach(el => {
         stockMELI.push(
             new ProductosMELI(el.id, el.title, el.price, el.thumbnail, el.permalink)
